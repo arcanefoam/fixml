@@ -1,0 +1,36 @@
+package [%= Model.allInstances.first().name %];
+
+// Class for tag [%= clazz.name %]
+public class [%= clazz.name %] {
+
+[% for (attribute in clazz.attributes ) { %]
+  String [%= attribute.name  %];
+[% } %]
+
+[% for (subclazz in clazz.clazzes) { %]
+  List<[%= subclazz.name %]> [%= subclazz.name %]s;
+[% } %]
+
+  // default constructor
+  public [%= clazz.name %] ([% for (attribute in clazz.attributes ) { %] String [%= attribute.name  %],[% } %] ) {
+    
+  [% for (attribute in clazz.attributes ) { %]
+    this.[%= attribute.name  %] = [%= attribute.name  %];
+  [% } %]  
+  }
+  
+[% for (subclazz in clazz.clazzes) { %]
+  public add[%= subclazz.name %]( [%= subclazz.name %] child ) {
+    this.[%= subclazz.name %]s.add( child );
+  }
+  
+[% } %]
+
+[% if (Model.allInstances.first().clazzes.first() == clazz) { %]
+  public void main ( String args[]) {
+   
+   	// build all the elements in the structure
+   
+  }
+[% } %]
+} 

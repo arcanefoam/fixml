@@ -1,0 +1,7 @@
+rule clazz2Java
+	transform clazz : Clazz {
+	
+	template	: "toJava.egl"
+	target		: "test/" + clazz.name + ".java" 
+	
+} 
