@@ -1,0 +1,26 @@
+PetriNet{
+[%
+	for(p in Place.all)
+	{
+		%]
+		Place [%=p.name%];
+		[%	
+	}
+	for(t in Transition.all)
+	{
+		%]
+		Transition [%=t.name%] (maxDelay=[%=t.maxDelay%],minDelay=[%=t.minDelay%]);
+		[%
+	}
+	for(i in InputArc.all){
+		%]
+		InputArc (from=[%=i.from.name%],to=[%=i.to.name%]);
+        [%	
+	}
+	for(o in OutputArc.all){
+		%]
+		OutputArc (from=[%=o.from.name%],to=[%=o.to.name%]);
+        [%	
+	}
+%]
+}

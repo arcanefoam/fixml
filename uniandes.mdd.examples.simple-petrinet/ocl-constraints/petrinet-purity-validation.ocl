@@ -1,0 +1,10 @@
+import '../metamodels/petrinet.ecore'
+
+package PN
+
+context PetriNet inv :
+not elements->exists(i,o|i.oclIsTypeOf(InputArc) and o.oclIsTypeOf(OutputArc) 
+	and i.oclAsType(InputArc).from = o.oclAsType(OutputArc).to 
+	and i.oclAsType(InputArc).to = o.oclAsType(OutputArc).from)
+
+endpackage

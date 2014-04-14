@@ -1,0 +1,6 @@
+PetriNet{
+		Place P1;
+		Transition T1 (maxDelay=1.0,minDelay=0.0);
+		InputArc (from=P1,to=T1);
+		OutputArc (from=T1,to=P1);
+}
