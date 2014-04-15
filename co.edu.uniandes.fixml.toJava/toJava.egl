@@ -1,5 +1,4 @@
 [%
-  // import 'simpleObjectUtils.eol';
   import 'toJavaUtils.egl';
 %]package [%= Model.allInstances.first().name %];
 
