@@ -39,9 +39,14 @@ public class Order {
 	}
 	
 	
-	public void main ( String args[]) {
+	public Order createMessage ( ) {
 	
-		// build all the elements in the structure
+		// create instance
+		Order message = new Order(
+		"123456", "2", "2001-09-11T09:30:47-05:00", "2", "93.25", "26522154"  
+		);
 		
+		
+		return message; 
 	}
 } 

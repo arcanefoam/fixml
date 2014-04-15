@@ -27,10 +27,28 @@ public class [%= clazz.name %] {
 [% } %]
 
 [% if (Model.allInstances.first().clazzes.first() == clazz) { %]
-  public void main ( String args[]) {
+  public [%= clazz.name %] createMessage ( ) {
    
-   	// build all the elements in the structure
-   
+   	// create instance
+   	[%= clazz.name %] message = new [%= clazz.name %](
+   	   [% var firstAttribute : Boolean = true;    	
+  	   for (attribute in clazz.attributes ) { 
+  	      if ( firstAttribute ) { firstAttribute = false; } else { %], [% } 
+  	      var assigned : Boolean = false; 
+          for (value in clazz.instances.first.values ) { 
+             if ( value.attribute == attribute ) { 
+    	   %]"[%= value.text  %]"[%
+    	       assigned = true; 
+    	     } 
+          } 
+          if ( not assigned ) { 
+       %] null [%
+          } 
+       } %]  
+   		);
+   	
+ 
+    return message; 
   }
 [% } %]
 } 
