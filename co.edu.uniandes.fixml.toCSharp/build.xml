@@ -1,7 +1,5 @@
 <project name="test" default="compile" >
 
-	<property name="dir.programfiles" 	location="${env.ProgramFiles}" />
-	
 	<target name="configure-mono" >
 		<echo>Configuring mono build.</echo>		
 		<property name="target.framework.version" 	value="2.0" />
