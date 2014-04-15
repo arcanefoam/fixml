@@ -1,29 +1,27 @@
-namespace text2.xml;
-
 
 
 // Class for tag Sndr
 class Sndr {
 
-	string ID;
-	string Sub;
-	string Loc;
+	string _ID;
+	string _Sub;
+	string _Loc;
 	
 	
 	// default constructor
 	
-	Sndr ( ) {   
-		this.ID = "String";
-		this.Sub = "String";
-		this.Loc = "String";
+	public Sndr ( ) {   
+		this._ID = "String";
+		this._Sub = "String";
+		this._Loc = "String";
 		
 		
 	}
 	
-	Sndr ( String ID, String Sub, String Loc ) {
-		this.ID = ID;
-		this.Sub = Sub;
-		this.Loc = Loc;
+	public Sndr ( string ID, string Sub, string Loc ) {
+		this._ID = ID;
+		this._Sub = Sub;
+		this._Loc = Loc;
 		
 	}
 	

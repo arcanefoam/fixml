@@ -1,6 +1,7 @@
 package text2.xml;
 
 import java.util.List;
+import java.util.ArrayList;
 
 // Class for tag Hdr
 public class Hdr {
@@ -46,16 +47,16 @@ public class Hdr {
 		
 	}
 	
-	public addSndr( Sndr child ) {
+	public void addSndr( Sndr child ) {
 		this.Sndrs.add( child );
 	}
-	public addTgt( Tgt child ) {
+	public void addTgt( Tgt child ) {
 		this.Tgts.add( child );
 	}
-	public addOnBhlfOf( OnBhlfOf child ) {
+	public void addOnBhlfOf( OnBhlfOf child ) {
 		this.OnBhlfOfs.add( child );
 	}
-	public addDlvrTo( DlvrTo child ) {
+	public void addDlvrTo( DlvrTo child ) {
 		this.DlvrTos.add( child );
 	}
 	

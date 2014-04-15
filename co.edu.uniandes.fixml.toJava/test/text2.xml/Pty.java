@@ -1,6 +1,7 @@
 package text2.xml;
 
 import java.util.List;
+import java.util.ArrayList;
 
 // Class for tag Pty
 public class Pty {
@@ -25,7 +26,7 @@ public class Pty {
 		
 	}
 	
-	public addSub( Sub child ) {
+	public void addSub( Sub child ) {
 		this.Subs.add( child );
 	}
 	

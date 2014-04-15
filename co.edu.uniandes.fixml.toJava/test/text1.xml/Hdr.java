@@ -1,6 +1,7 @@
 package text1.xml;
 
 import java.util.List;
+import java.util.ArrayList;
 
 // Class for tag Hdr
 public class Hdr {
@@ -38,10 +39,10 @@ public class Hdr {
 		
 	}
 	
-	public addSndr( Sndr child ) {
+	public void addSndr( Sndr child ) {
 		this.Sndrs.add( child );
 	}
-	public addTgt( Tgt child ) {
+	public void addTgt( Tgt child ) {
 		this.Tgts.add( child );
 	}
 	

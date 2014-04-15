@@ -1,6 +1,7 @@
 package text1.xml;
 
 import java.util.List;
+import java.util.ArrayList;
 
 // Class for tag Order
 public class Order {
@@ -54,13 +55,13 @@ public class Order {
 		
 	}
 	
-	public addHdr( Hdr child ) {
+	public void addHdr( Hdr child ) {
 		this.Hdrs.add( child );
 	}
-	public addInstrmt( Instrmt child ) {
+	public void addInstrmt( Instrmt child ) {
 		this.Instrmts.add( child );
 	}
-	public addOrdQty( OrdQty child ) {
+	public void addOrdQty( OrdQty child ) {
 		this.OrdQtys.add( child );
 	}
 	

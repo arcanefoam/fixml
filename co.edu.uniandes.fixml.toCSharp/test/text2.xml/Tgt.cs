@@ -1,29 +1,27 @@
-namespace text2.xml;
-
 
 
 // Class for tag Tgt
 class Tgt {
 
-	string ID;
-	string Sub;
-	string Loc;
+	string _ID;
+	string _Sub;
+	string _Loc;
 	
 	
 	// default constructor
 	
-	Tgt ( ) {   
-		this.ID = "String";
-		this.Sub = "String";
-		this.Loc = "String";
+	public Tgt ( ) {   
+		this._ID = "String";
+		this._Sub = "String";
+		this._Loc = "String";
 		
 		
 	}
 	
-	Tgt ( String ID, String Sub, String Loc ) {
-		this.ID = ID;
-		this.Sub = Sub;
-		this.Loc = Loc;
+	public Tgt ( string ID, string Sub, string Loc ) {
+		this._ID = ID;
+		this._Sub = Sub;
+		this._Loc = Loc;
 		
 	}
 	

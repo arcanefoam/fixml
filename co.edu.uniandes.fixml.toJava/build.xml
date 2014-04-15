@@ -1,0 +1,12 @@
+<project name="test" default="compile" >
+
+	 <property name="root" value="${basedir}/test"/>
+
+	 <property name="destdir" value="./bin" />
+
+	 <target name="compile">
+	  <javac srcdir="${root}" destdir="${destdir}" debug="on" nowarn="on" source="1.6" includeantruntime="false">
+	  </javac>
+	 </target>
+		
+</project>

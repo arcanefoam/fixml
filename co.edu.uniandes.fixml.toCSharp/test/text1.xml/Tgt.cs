@@ -1,23 +1,21 @@
-namespace text1.xml;
-
 
 
 // Class for tag Tgt
 class Tgt {
 
-	string ID;
+	string _ID;
 	
 	
 	// default constructor
 	
-	Tgt ( ) {   
-		this.ID = "ABROKER";
+	public Tgt ( ) {   
+		this._ID = "ABROKER";
 		
 		
 	}
 	
-	Tgt ( String ID ) {
-		this.ID = ID;
+	public Tgt ( string ID ) {
+		this._ID = ID;
 		
 	}
 	
