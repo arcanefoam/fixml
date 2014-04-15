@@ -10,11 +10,16 @@ public class Tgt {
 	
 	// default constructor
 	public Tgt ( String ID ) {
-	
 		this.ID = ID;
 		
 	}
 	
+	
+	public Tgt ( ) {   
+	
+		this.ID = "ABROKER";
+		
+	}
 	
 	
 } 

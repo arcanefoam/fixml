@@ -1,0 +1,7 @@
+rule clazz2CSharp
+	transform clazz : Clazz {
+	
+	template	: "toCSharp.egl"
+	target		: "test/" + Model.allInstances.first().name + "/" + clazz.name + ".cs" 
+	
+} 

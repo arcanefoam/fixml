@@ -12,13 +12,20 @@ public class DlvrTo {
 	
 	// default constructor
 	public DlvrTo ( String ID, String Sub, String Loc ) {
-	
 		this.ID = ID;
 		this.Sub = Sub;
 		this.Loc = Loc;
 		
 	}
 	
+	
+	public DlvrTo ( ) {   
+	
+		this.ID = "String";
+		this.Sub = "String";
+		this.Loc = "String";
+		
+	}
 	
 	
 } 

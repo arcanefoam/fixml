@@ -12,13 +12,20 @@ public class Qty {
 	
 	// default constructor
 	public Qty ( String Typ, String Long, String Short ) {
-	
 		this.Typ = Typ;
 		this.Long = Long;
 		this.Short = Short;
 		
 	}
 	
+	
+	public Qty ( ) {   
+	
+		this.Typ = "SOD";
+		this.Long = "35";
+		this.Short = "0";
+		
+	}
 	
 	
 } 

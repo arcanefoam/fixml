@@ -11,12 +11,18 @@ public class Sub {
 	
 	// default constructor
 	public Sub ( String ID, String Typ ) {
-	
 		this.ID = ID;
 		this.Typ = Typ;
 		
 	}
 	
+	
+	public Sub ( ) {   
+	
+		this.ID = "ZZZ";
+		this.Typ = "2";
+		
+	}
 	
 	
 } 

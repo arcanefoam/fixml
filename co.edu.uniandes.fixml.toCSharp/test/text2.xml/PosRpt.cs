@@ -1,45 +1,30 @@
-package text2.xml;
+namespace text2.xml;
 
-import java.util.List;
+using System.Collections.Generic;
 
 // Class for tag PosRpt
-public class PosRpt {
+class PosRpt {
 
-	String RptID;
-	String Rslt;
-	String BizDt;
-	String Acct;
-	String AcctTyp;
-	String SetPx;
-	String SetPxTyp;
-	String PriSetPx;
-	String ReqTyp;
-	String Ccy;
+	string RptID;
+	string Rslt;
+	string BizDt;
+	string Acct;
+	string AcctTyp;
+	string SetPx;
+	string SetPxTyp;
+	string PriSetPx;
+	string ReqTyp;
+	string Ccy;
 	
-	List<Hdr> Hdrs = new ArrayList<Hdr>();
-	List<Pty> Ptys = new ArrayList<Pty>();
-	List<Qty> Qtys = new ArrayList<Qty>();
-	List<Amt> Amts = new ArrayList<Amt>();
-	List<Instrmt> Instrmts = new ArrayList<Instrmt>();
+	List<Hdr> Hdrs = new List<Hdr>();
+	List<Pty> Ptys = new List<Pty>();
+	List<Qty> Qtys = new List<Qty>();
+	List<Amt> Amts = new List<Amt>();
+	List<Instrmt> Instrmts = new List<Instrmt>();
 	
 	// default constructor
-	public PosRpt ( String RptID, String Rslt, String BizDt, String Acct, String AcctTyp, String SetPx, String SetPxTyp, String PriSetPx, String ReqTyp, String Ccy ) {
-		this.RptID = RptID;
-		this.Rslt = Rslt;
-		this.BizDt = BizDt;
-		this.Acct = Acct;
-		this.AcctTyp = AcctTyp;
-		this.SetPx = SetPx;
-		this.SetPxTyp = SetPxTyp;
-		this.PriSetPx = PriSetPx;
-		this.ReqTyp = ReqTyp;
-		this.Ccy = Ccy;
-		
-	}
 	
-	
-	public PosRpt ( ) {   
-	
+	PosRpt ( ) {   
 		this.RptID = "541386431";
 		this.Rslt = "0";
 		this.BizDt = "2003-03-10T00:00:00";
@@ -93,22 +78,42 @@ public class PosRpt {
 		Instrmt PosRpt1_Instrmt1= new Instrmt("AOL", "KW", "3", "OCASPS", "20031122", "2003-11-22T00:00:00", "47.50", "USD", "100");
 		this.addInstrmt( PosRpt1_Instrmt1 );
 		
+		
 	}
 	
-	public addHdr( Hdr child ) {
-		this.Hdrs.add( child );
+	PosRpt ( String RptID, String Rslt, String BizDt, String Acct, String AcctTyp, String SetPx, String SetPxTyp, String PriSetPx, String ReqTyp, String Ccy ) {
+		this.RptID = RptID;
+		this.Rslt = Rslt;
+		this.BizDt = BizDt;
+		this.Acct = Acct;
+		this.AcctTyp = AcctTyp;
+		this.SetPx = SetPx;
+		this.SetPxTyp = SetPxTyp;
+		this.PriSetPx = PriSetPx;
+		this.ReqTyp = ReqTyp;
+		this.Ccy = Ccy;
+		
 	}
-	public addPty( Pty child ) {
-		this.Ptys.add( child );
+	
+	AddHdr( Hdr child ) {
+		this.Hdrs.Add( child );
 	}
-	public addQty( Qty child ) {
-		this.Qtys.add( child );
+	
+	AddPty( Pty child ) {
+		this.Ptys.Add( child );
 	}
-	public addAmt( Amt child ) {
-		this.Amts.add( child );
+	
+	AddQty( Qty child ) {
+		this.Qtys.Add( child );
 	}
-	public addInstrmt( Instrmt child ) {
-		this.Instrmts.add( child );
+	
+	AddAmt( Amt child ) {
+		this.Amts.Add( child );
 	}
+	
+	AddInstrmt( Instrmt child ) {
+		this.Instrmts.Add( child );
+	}
+	
 	
 } 

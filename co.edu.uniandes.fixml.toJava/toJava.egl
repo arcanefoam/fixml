@@ -2,6 +2,7 @@
   import 'toJavaUtils.egl';
 %]package [%= Model.allInstances.first().name %];
 
+[% if( clazz.clazzes.size > 0 ) { %]import java.util.List;[% } %]
 [*- var attributeString = clazz.attributes.collect(a|"String " + a.name).concat(", "); *]
 
 // Class for tag [%= clazz.name %]
@@ -17,29 +18,26 @@ public class [%= clazz.name %] {
 
   // default constructor
   public [%= clazz.name %] ( [%= clazz.attributes.collect(a|"String " + a.name).concat(", ") %] ) {
-    
   [% for (attribute in clazz.attributes ) { %]
     this.[%= attribute.name  %] = [%= attribute.name  %];
   [% } %]  
   }
+
+[*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
+    We can shortcut because we are using EMF-based models            *]
+[% if ( clazz.eContainer().isTypeOf( Model ) ) { %][% } %]
+  public [%= clazz.name %] ( ) {   
   
+    [% 
+      var firstInstance : Instance = clazz.instances.first; 
+      firstInstance.initialization( '' ); 
+    %]
+  }
+      
 [% for (subclazz in clazz.clazzes) { %]
   public add[%= subclazz.name %]( [%= subclazz.name %] child ) {
     this.[%= subclazz.name %]s.add( child );
   }
-  
 [% } %]
 
-[*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
-    We can shortcut because we are using EMF-based models            *]
-[% if ( clazz.eContainer().isTypeOf( Model ) ) { %]
-  public [%= clazz.name %] createMessage ( ) {   
-    [% 
-      var firstInstance : Instance = clazz.instances.first; 
-      firstInstance.declaration( '' ); 
-    %] 
-    
-    return [%= firstInstance.name %]; 
-  }
-[% } %]
 } 
