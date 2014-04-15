@@ -1,4 +1,9 @@
-package [%= Model.allInstances.first().name %];
+[%
+  // import 'simpleObjectUtils.eol';
+  import 'toJavaUtils.egl';
+%]package [%= Model.allInstances.first().name %];
+
+[*- var attributeString = clazz.attributes.collect(a|"String " + a.name).concat(", "); *]
 
 // Class for tag [%= clazz.name %]
 public class [%= clazz.name %] {
@@ -8,11 +13,11 @@ public class [%= clazz.name %] {
 [% } %]
 
 [% for (subclazz in clazz.clazzes) { %]
-  List<[%= subclazz.name %]> [%= subclazz.name %]s;
+  List<[%= subclazz.name %]> [%= subclazz.name %]s = new ArrayList<[%= subclazz.name %]>();
 [% } %]
 
   // default constructor
-  public [%= clazz.name %] ([% for (attribute in clazz.attributes ) { %] String [%= attribute.name  %],[% } %] ) {
+  public [%= clazz.name %] ( [%= clazz.attributes.collect(a|"String " + a.name).concat(", ") %] ) {
     
   [% for (attribute in clazz.attributes ) { %]
     this.[%= attribute.name  %] = [%= attribute.name  %];
@@ -26,29 +31,16 @@ public class [%= clazz.name %] {
   
 [% } %]
 
-[% if (Model.allInstances.first().clazzes.first() == clazz) { %]
-  public [%= clazz.name %] createMessage ( ) {
-   
-   	// create instance
-   	[%= clazz.name %] message = new [%= clazz.name %](
-   	   [% var firstAttribute : Boolean = true;    	
-  	   for (attribute in clazz.attributes ) { 
-  	      if ( firstAttribute ) { firstAttribute = false; } else { %], [% } 
-  	      var assigned : Boolean = false; 
-          for (value in clazz.instances.first.values ) { 
-             if ( value.attribute == attribute ) { 
-    	   %]"[%= value.text  %]"[%
-    	       assigned = true; 
-    	     } 
-          } 
-          if ( not assigned ) { 
-       %] null [%
-          } 
-       } %]  
-   		);
-   	
- 
-    return message; 
+[*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
+    We can shortcut because we are using EMF-based models            *]
+[% if ( clazz.eContainer().isTypeOf( Model ) ) { %]
+  public [%= clazz.name %] createMessage ( ) {   
+    [% 
+      var firstInstance : Instance = clazz.instances.first; 
+      firstInstance.declaration( '' ); 
+    %] 
+    
+    return [%= firstInstance.name %]; 
   }
 [% } %]
 } 

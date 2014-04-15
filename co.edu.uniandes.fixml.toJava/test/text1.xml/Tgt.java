@@ -1,5 +1,7 @@
 package text1.xml;
 
+
+
 // Class for tag Tgt
 public class Tgt {
 
@@ -7,11 +9,12 @@ public class Tgt {
 	
 	
 	// default constructor
-	public Tgt ( String ID, ) {
+	public Tgt ( String ID ) {
 	
 		this.ID = ID;
 		
 	}
+	
 	
 	
 } 

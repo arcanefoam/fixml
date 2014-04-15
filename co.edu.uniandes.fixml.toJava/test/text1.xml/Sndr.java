@@ -1,5 +1,7 @@
 package text1.xml;
 
+
+
 // Class for tag Sndr
 public class Sndr {
 
@@ -7,11 +9,12 @@ public class Sndr {
 	
 	
 	// default constructor
-	public Sndr ( String ID, ) {
+	public Sndr ( String ID ) {
 	
 		this.ID = ID;
 		
 	}
+	
 	
 	
 } 

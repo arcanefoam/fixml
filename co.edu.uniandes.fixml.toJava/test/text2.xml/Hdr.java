@@ -1,4 +1,4 @@
-package text1.xml;
+package text2.xml;
 
 
 
@@ -10,8 +10,10 @@ public class Hdr {
 	String PosRsnd;
 	String SeqNum;
 	
-	List<Sndr> Sndrs;
-	List<Tgt> Tgts;
+	List<Sndr> Sndrs = new ArrayList<Sndr>();
+	List<Tgt> Tgts = new ArrayList<Tgt>();
+	List<OnBhlfOf> OnBhlfOfs = new ArrayList<OnBhlfOf>();
+	List<DlvrTo> DlvrTos = new ArrayList<DlvrTo>();
 	
 	// default constructor
 	public Hdr ( String Snt, String PosDup, String PosRsnd, String SeqNum ) {
@@ -29,6 +31,14 @@ public class Hdr {
 	
 	public addTgt( Tgt child ) {
 		this.Tgts.add( child );
+	}
+	
+	public addOnBhlfOf( OnBhlfOf child ) {
+		this.OnBhlfOfs.add( child );
+	}
+	
+	public addDlvrTo( DlvrTo child ) {
+		this.DlvrTos.add( child );
 	}
 	
 	

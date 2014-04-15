@@ -1,5 +1,7 @@
 package text1.xml;
 
+
+
 // Class for tag OrdQty
 public class OrdQty {
 
@@ -7,11 +9,12 @@ public class OrdQty {
 	
 	
 	// default constructor
-	public OrdQty ( String Qty, ) {
+	public OrdQty ( String Qty ) {
 	
 		this.Qty = Qty;
 		
 	}
+	
 	
 	
 } 

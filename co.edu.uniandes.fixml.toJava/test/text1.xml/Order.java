@@ -1,5 +1,7 @@
 package text1.xml;
 
+
+
 // Class for tag Order
 public class Order {
 
@@ -15,7 +17,7 @@ public class Order {
 	List<OrdQty> OrdQtys;
 	
 	// default constructor
-	public Order ( String ClOrdID, String Side, String TransactTm, String OrdTyp, String Px, String Acct, ) {
+	public Order ( String ClOrdID, String Side, String TransactTm, String OrdTyp, String Px, String Acct ) {
 	
 		this.ClOrdID = ClOrdID;
 		this.Side = Side;
@@ -39,14 +41,26 @@ public class Order {
 	}
 	
 	
-	public Order createMessage ( ) {
 	
-		// create instance
-		Order message = new Order(
-		"123456", "2", "2001-09-11T09:30:47-05:00", "2", "93.25", "26522154"  
-		);
+	public Order createMessage ( ) {   
+		Order Order1= new Order();
+		Hdr Order1_Hdr1= new Hdr();
+		Sndr Order1_Hdr1_Sndr1= new Sndr();
+		Order1_Hdr1.addSndr( Order1_Hdr1_Sndr1 );
+		
+		Tgt Order1_Hdr1_Tgt1= new Tgt();
+		Order1_Hdr1.addTgt( Order1_Hdr1_Tgt1 );
+		
+		Order1.addHdr( Order1_Hdr1 );
+		
+		Instrmt Order1_Instrmt1= new Instrmt();
+		Order1.addInstrmt( Order1_Instrmt1 );
+		
+		OrdQty Order1_OrderQty1= new OrdQty();
+		Order1.addOrdQty( Order1_OrderQty1 );
 		
 		
-		return message; 
+		
+		return Order1; 
 	}
 } 
