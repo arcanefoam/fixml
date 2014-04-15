@@ -1,0 +1,97 @@
+[%
+
+operation valueFor( instance : Instance, attribute : Attribute ) : String {
+	for ( value in instance.values ) {
+		if ( value.attribute == attribute) {
+		   	return value.text;
+		}
+	}
+	return "null";
+}
+
+operation Instance declaration( prefix : String  ) {
+  
+	var selfname : String = prefix + self.name;
+  	  	
+  %][%= self.clazz.name %] [%= selfname %]= new [%= self.clazz.name %]([%= self.clazz.attributes.collect( attr | '"' + valueFor( self, attr ) + '"').concat(', ') %]);
+  [% 
+  	for ( instance in self.children ) {
+  		instance.declaration( selfname + '_' );
+  		%][%= selfname %].add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		
+  		[%  
+  	} 	
+} 		
+
+operation Instance initialization( prefix : String  ) {
+  
+	var selfname : String = prefix + self.name;
+  	  	
+  %][%= self.clazz.attributes.collect( attr | 'this.' + attr.name + ' = "' + valueFor( self, attr ) + '"').concat(';\n') %];
+  
+  [% 
+  	for ( instance in self.children ) {
+  		instance.declaration( selfname + '_' );
+  		%]this.add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		
+  		[%  
+  	} 	
+} 	
+
+
+operation Clazz initialization2( prefix : String  ) {
+  
+		var cont: Integer = 1;
+		%][%
+
+		for (instance in self.instances ) { %]
+		
+			[%= self.name%] [%= self.name%]_[%= cont%] = new [%= self.name%](
+					[% for (att1 in self.attributes) { %]
+						[% for (value in instance.values) { %]
+						    [% if (value.attribute == att1) { %]
+						    	"[%= value.text %]",
+						    [% } %] [% } %] [% } %][% 
+			for (subClazz in self.clazzes ) { %]			
+				[% var cont: Integer = 1; %]
+				[% for (instance in subClazz.instances ) { %]				    
+				    new [%= subClazz.name%] (
+						[% for (att2 in subClazz.attributes) { %]
+							[% for (value2 in instance.values) { %]
+							    [% if (value2.attribute == att2) { %]
+							    	"[%= value2.text %]",
+							    [% } %] 
+							[% } %]
+						[% } %]
+						),				    		
+					[% cont = cont+1; %]
+				[% } %]	
+			[% }%]
+			);
+			[% cont = cont+1; %]
+			[% 
+		}		
+} 	
+
+operation Instance initialization2Instances( prefix : String  ) {
+  
+		var cont: Integer = 1;
+		%]
+
+			[%= self.name%] [%= self.name%]_[%= cont%] = new [%= self.name%](
+					[% for (att1 in self.attributes) { %]
+						[% for (value in instance.values) { %]
+						    [% if (value.attribute == att1) { %]
+						    	[%= value.text %],
+						    [% } %] [% } %] [% } %]
+						    );
+						    
+						    						    
+						    						    
+			[% cont = cont+1; %]
+			
+		[%
+		
+} 	
+
+%]
