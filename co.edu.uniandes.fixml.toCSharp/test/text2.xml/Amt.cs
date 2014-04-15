@@ -1,26 +1,24 @@
-namespace text2.xml;
-
 
 
 // Class for tag Amt
 class Amt {
 
-	string Typ;
-	string Amt;
+	string _Typ;
+	string _Amt;
 	
 	
 	// default constructor
 	
-	Amt ( ) {   
-		this.Typ = "FMTM";
-		this.Amt = "0.00";
+	public Amt ( ) {   
+		this._Typ = "FMTM";
+		this._Amt = "0.00";
 		
 		
 	}
 	
-	Amt ( String Typ, String Amt ) {
-		this.Typ = Typ;
-		this.Amt = Amt;
+	public Amt ( string Typ, string Amt ) {
+		this._Typ = Typ;
+		this._Amt = Amt;
 		
 	}
 	

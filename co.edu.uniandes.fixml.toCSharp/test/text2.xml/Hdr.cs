@@ -1,65 +1,63 @@
-namespace text2.xml;
 
 using System.Collections.Generic;
-
 // Class for tag Hdr
 class Hdr {
 
-	string Snt;
-	string PosDup;
-	string PosRsnd;
-	string SeqNum;
+	string _Snt;
+	string _PosDup;
+	string _PosRsnd;
+	string _SeqNum;
 	
-	List<Sndr> Sndrs = new List<Sndr>();
-	List<Tgt> Tgts = new List<Tgt>();
-	List<OnBhlfOf> OnBhlfOfs = new List<OnBhlfOf>();
-	List<DlvrTo> DlvrTos = new List<DlvrTo>();
+	List<Sndr> _Sndrs = new List<Sndr>();
+	List<Tgt> _Tgts = new List<Tgt>();
+	List<OnBhlfOf> _OnBhlfOfs = new List<OnBhlfOf>();
+	List<DlvrTo> _DlvrTos = new List<DlvrTo>();
 	
 	// default constructor
 	
-	Hdr ( ) {   
-		this.Snt = "2001-12-17T09:30:47-05:00";
-		this.PosDup = "N";
-		this.PosRsnd = "N";
-		this.SeqNum = "1002";
+	public Hdr ( ) {   
+		this._Snt = "2001-12-17T09:30:47-05:00";
+		this._PosDup = "N";
+		this._PosRsnd = "N";
+		this._SeqNum = "1002";
 		
 		Sndr Hdr1_Sndr1= new Sndr("String", "String", "String");
-		this.addSndr( Hdr1_Sndr1 );
+		this.AddSndr( Hdr1_Sndr1 );
 		
 		Tgt Hdr1_Tgt1= new Tgt("String", "String", "String");
-		this.addTgt( Hdr1_Tgt1 );
+		this.AddTgt( Hdr1_Tgt1 );
 		
 		OnBhlfOf Hdr1_OnBhlfOf1= new OnBhlfOf("String", "String", "String");
-		this.addOnBhlfOf( Hdr1_OnBhlfOf1 );
+		this.AddOnBhlfOf( Hdr1_OnBhlfOf1 );
 		
 		DlvrTo Hdr1_DlvrTo1= new DlvrTo("String", "String", "String");
-		this.addDlvrTo( Hdr1_DlvrTo1 );
+		this.AddDlvrTo( Hdr1_DlvrTo1 );
 		
 		
 	}
 	
-	Hdr ( String Snt, String PosDup, String PosRsnd, String SeqNum ) {
-		this.Snt = Snt;
-		this.PosDup = PosDup;
-		this.PosRsnd = PosRsnd;
-		this.SeqNum = SeqNum;
+	public Hdr ( string Snt, string PosDup, string PosRsnd, string SeqNum ) {
+		this._Snt = Snt;
+		this._PosDup = PosDup;
+		this._PosRsnd = PosRsnd;
+		this._SeqNum = SeqNum;
 		
 	}
 	
-	AddSndr( Sndr child ) {
-		this.Sndrs.Add( child );
+	public void AddSndr( Sndr child ) {
+		this._Sndrs.Add( child );
 	}
 	
-	AddTgt( Tgt child ) {
-		this.Tgts.Add( child );
+	public void AddTgt( Tgt child ) {
+		this._Tgts.Add( child );
 	}
 	
-	AddOnBhlfOf( OnBhlfOf child ) {
-		this.OnBhlfOfs.Add( child );
+	public void AddOnBhlfOf( OnBhlfOf child ) {
+		this._OnBhlfOfs.Add( child );
 	}
 	
-	AddDlvrTo( DlvrTo child ) {
-		this.DlvrTos.Add( child );
+	public void AddDlvrTo( DlvrTo child ) {
+		this._DlvrTos.Add( child );
 	}
 	
 	

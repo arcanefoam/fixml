@@ -1,26 +1,24 @@
-namespace text2.xml;
-
 
 
 // Class for tag Sub
 class Sub {
 
-	string ID;
-	string Typ;
+	string _ID;
+	string _Typ;
 	
 	
 	// default constructor
 	
-	Sub ( ) {   
-		this.ID = "ZZZ";
-		this.Typ = "2";
+	public Sub ( ) {   
+		this._ID = "ZZZ";
+		this._Typ = "2";
 		
 		
 	}
 	
-	Sub ( String ID, String Typ ) {
-		this.ID = ID;
-		this.Typ = Typ;
+	public Sub ( string ID, string Typ ) {
+		this._ID = ID;
+		this._Typ = Typ;
 		
 	}
 	
