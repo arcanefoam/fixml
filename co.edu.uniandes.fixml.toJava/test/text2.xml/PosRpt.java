@@ -1,6 +1,7 @@
 package text2.xml;
 
 import java.util.List;
+import java.util.ArrayList;
 
 // Class for tag PosRpt
 public class PosRpt {
@@ -95,19 +96,19 @@ public class PosRpt {
 		
 	}
 	
-	public addHdr( Hdr child ) {
+	public void addHdr( Hdr child ) {
 		this.Hdrs.add( child );
 	}
-	public addPty( Pty child ) {
+	public void addPty( Pty child ) {
 		this.Ptys.add( child );
 	}
-	public addQty( Qty child ) {
+	public void addQty( Qty child ) {
 		this.Qtys.add( child );
 	}
-	public addAmt( Amt child ) {
+	public void addAmt( Amt child ) {
 		this.Amts.add( child );
 	}
-	public addInstrmt( Instrmt child ) {
+	public void addInstrmt( Instrmt child ) {
 		this.Instrmts.add( child );
 	}
 	

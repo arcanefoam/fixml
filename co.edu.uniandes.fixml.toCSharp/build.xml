@@ -1,0 +1,59 @@
+<project name="test" default="compile" >
+
+	<target name="configure-mono" >
+		<echo>Configuring mono build.</echo>		
+		<property name="target.framework.version" 	value="2.0" />
+		<property name="csharp.definitions" 		value="MONO,NET_2_0" />
+		<property name="csc.executable" 			location="C:/Program Files (x86)/Mono-3.2.3/bin/gmcs.bat" />
+		<property name="csc.tests.extraoptions" 	value="-r:System.Drawing" />
+	</target>
+	
+	<macrodef name="csc">
+		<attribute name="file" />
+		<attribute name="outputPath" default="./bin" />
+		
+		<sequential>
+			<exec taskname="csc" executable="${csc.executable}" failonerror="true">
+				<arg value="@{file}" />
+			</exec>
+		</sequential>		
+	</macrodef>
+	
+	<target name="compile" depends="configure-mono" >
+		<!--
+		<csc file="./test/text1.xml/Hdr.cs ./test/text1.xml/Instrmt.cs ./test/text1.xml/Order.cs ./test/text1.xml/OrdQty.cs ./test/text1.xml/Sndr.cs ./test/text1.xml/Tgt.cs"
+			outputPath="./bin/text1.xml"	
+		/>
+		-->
+		<exec taskname="csc" executable="${csc.executable}" failonerror="true">
+			<arg value="-target:library" />
+			<arg value="-nowarn:414" />
+			<arg value="-out:./bin/Order.dll" />
+			<arg value="./test/text1.xml/Order.cs" />
+			<arg value="./test/text1.xml/Hdr.cs" />
+			<arg value="./test/text1.xml/Instrmt.cs" />
+			<arg value="./test/text1.xml/OrdQty.cs" />
+			<arg value="./test/text1.xml/Sndr.cs" />
+			<arg value="./test/text1.xml/Tgt.cs" />
+		</exec>
+
+		<exec taskname="csc" executable="${csc.executable}" failonerror="true">
+			<arg value="-target:library" />
+			<arg value="-nowarn:414" />
+			<arg value="-out:./bin/PosRpt.dll" />
+			<arg value="./test/text2.xml/PosRpt.cs" />
+			<arg value="./test/text2.xml/Amt.cs" />
+			<arg value="./test/text2.xml/DlvrTo.cs" />
+			<arg value="./test/text2.xml/Hdr.cs" />
+			<arg value="./test/text2.xml/Instrmt.cs" />
+			<arg value="./test/text2.xml/OnBhlfOf.cs" />
+			<arg value="./test/text2.xml/Pty.cs" />
+			<arg value="./test/text2.xml/Qty.cs" />
+			<arg value="./test/text2.xml/Sndr.cs" />
+			<arg value="./test/text2.xml/Sub.cs" />
+			<arg value="./test/text2.xml/Tgt.cs" />
+		</exec>
+		
+	</target>
+	
+</project>

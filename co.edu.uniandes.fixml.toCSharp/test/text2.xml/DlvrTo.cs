@@ -1,29 +1,27 @@
-namespace text2.xml;
-
 
 
 // Class for tag DlvrTo
 class DlvrTo {
 
-	string ID;
-	string Sub;
-	string Loc;
+	string _ID;
+	string _Sub;
+	string _Loc;
 	
 	
 	// default constructor
 	
-	DlvrTo ( ) {   
-		this.ID = "String";
-		this.Sub = "String";
-		this.Loc = "String";
+	public DlvrTo ( ) {   
+		this._ID = "String";
+		this._Sub = "String";
+		this._Loc = "String";
 		
 		
 	}
 	
-	DlvrTo ( String ID, String Sub, String Loc ) {
-		this.ID = ID;
-		this.Sub = Sub;
-		this.Loc = Loc;
+	public DlvrTo ( string ID, string Sub, string Loc ) {
+		this._ID = ID;
+		this._Sub = Sub;
+		this._Loc = Loc;
 		
 	}
 	

@@ -1,23 +1,21 @@
-namespace text1.xml;
-
 
 
 // Class for tag OrdQty
 class OrdQty {
 
-	string Qty;
+	string _Qty;
 	
 	
 	// default constructor
 	
-	OrdQty ( ) {   
-		this.Qty = "1000";
+	public OrdQty ( ) {   
+		this._Qty = "1000";
 		
 		
 	}
 	
-	OrdQty ( String Qty ) {
-		this.Qty = Qty;
+	public OrdQty ( string Qty ) {
+		this._Qty = Qty;
 		
 	}
 	

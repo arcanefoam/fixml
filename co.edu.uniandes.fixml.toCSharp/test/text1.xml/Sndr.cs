@@ -1,23 +1,21 @@
-namespace text1.xml;
-
 
 
 // Class for tag Sndr
 class Sndr {
 
-	string ID;
+	string _ID;
 	
 	
 	// default constructor
 	
-	Sndr ( ) {   
-		this.ID = "AFUNDMGR";
+	public Sndr ( ) {   
+		this._ID = "AFUNDMGR";
 		
 		
 	}
 	
-	Sndr ( String ID ) {
-		this.ID = ID;
+	public Sndr ( string ID ) {
+		this._ID = ID;
 		
 	}
 	

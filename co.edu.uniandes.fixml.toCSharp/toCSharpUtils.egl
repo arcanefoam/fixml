@@ -17,7 +17,7 @@ operation Instance declaration( prefix : String  ) {
   [% 
   	for ( instance in self.children ) {
   		instance.declaration( selfname + '_' );
-  		%][%= selfname %].add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		%][%= selfname %].Add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
   		
   		[%  
   	} 	
@@ -27,12 +27,12 @@ operation Instance initialization( prefix : String  ) {
   
 	var selfname : String = prefix + self.name;
   	  	
-  %][%= self.clazz.attributes.collect( attr | 'this.' + attr.name + ' = "' + valueFor( self, attr ) + '"').concat(';\n') %];
+  %][%= self.clazz.attributes.collect( attr | 'this._' + attr.name + ' = "' + valueFor( self, attr ) + '"').concat(';\n') %];
   
   [% 
   	for ( instance in self.children ) {
   		instance.declaration( selfname + '_' );
-  		%]this.add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		%]this.Add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
   		
   		[%  
   	} 	

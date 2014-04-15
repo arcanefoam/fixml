@@ -2,7 +2,9 @@
   import 'toJavaUtils.egl';
 %]package [%= Model.allInstances.first().name %];
 
-[% if( clazz.clazzes.size > 0 ) { %]import java.util.List;[% } %]
+[% if( clazz.clazzes.size > 0 ) { %]
+import java.util.List;
+import java.util.ArrayList;[% } %]
 [*- var attributeString = clazz.attributes.collect(a|"String " + a.name).concat(", "); *]
 
 // Class for tag [%= clazz.name %]
@@ -35,7 +37,7 @@ public class [%= clazz.name %] {
   }
       
 [% for (subclazz in clazz.clazzes) { %]
-  public add[%= subclazz.name %]( [%= subclazz.name %] child ) {
+  public void add[%= subclazz.name %]( [%= subclazz.name %] child ) {
     this.[%= subclazz.name %]s.add( child );
   }
 [% } %]
