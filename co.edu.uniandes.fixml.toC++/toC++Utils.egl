@@ -42,56 +42,42 @@ operation Instance initialization( prefix : String  ) {
 operation Clazz initialization2( prefix : String  ) {
   
 		var cont: Integer = 1;
-		%][%
-
-		for (instance in self.instances ) { %]
+		var parametersName : String = "";
+	
+		for (instance in self.instances ) {
 		
-			[%= self.name%] [%= self.name%]_[%= cont%] = new [%= self.name%](
-					[% for (att1 in self.attributes) { %]
-						[% for (value in instance.values) { %]
-						    [% if (value.attribute == att1) { %]
-						    	"[%= value.text %]",
-						    [% } %] [% } %] [% } %][% 
-			for (subClazz in self.clazzes ) { %]			
-				[% var cont: Integer = 1; %]
-				[% for (instance in subClazz.instances ) { %]				    
-				    new [%= subClazz.name%] (
-						[% for (att2 in subClazz.attributes) { %]
-							[% for (value2 in instance.values) { %]
-							    [% if (value2.attribute == att2) { %]
-							    	"[%= value2.text %]",
-							    [% } %] 
-							[% } %]
-						[% } %]
-						),				    		
-					[% cont = cont+1; %]
-				[% } %]	
-			[% }%]
-			);
-			[% cont = cont+1; %]
-			[% 
-		}		
+			parametersName = parametersName + "\n\n\t\t" + self.name + self.name + "_" + cont + "= new" + self.name + "(";
+
+			parametersName = parametersName + self.attributes.collect( att | '"' + valueFor(instance,att) + '"').concat(',');
+					
+			for (subClazz in self.clazzes ) {
+				parametersName = parametersName + subClazz.initialization2SubClazz(subClazz);
+			}
+			parametersName = parametersName + ");";
+			cont = cont+1;
+		}
+		
+		%][%=parametersName%][%		
 } 	
 
-operation Instance initialization2Instances( prefix : String  ) {
-  
-		var cont: Integer = 1;
-		%]
 
-			[%= self.name%] [%= self.name%]_[%= cont%] = new [%= self.name%](
-					[% for (att1 in self.attributes) { %]
-						[% for (value in instance.values) { %]
-						    [% if (value.attribute == att1) { %]
-						    	[%= value.text %],
-						    [% } %] [% } %] [% } %]
-						    );
-						    
-						    						    
-						    						    
-			[% cont = cont+1; %]
-			
-		[%
-		
+operation Clazz initialization2SubClazz( subClazz : Clazz  ) : String {
+ 			
+	var parametersName: String = "\n\t\t\t\t, new " + subClazz.name + "(";
+				
+	for (instance in subClazz.instances ){	
+	
+		parametersName = parametersName + self.attributes.collect( att | '"' + valueFor(instance,att) + '"').concat(',');
+	
+		for (subSubClazz in subClazz.clazzes ) {
+			parametersName = subSubClazz.initialization2SubClazz(subSubClazz);
+		}				
+		parametersName = parametersName + ")";
+	
+	}	
+	return parametersName;
 } 	
+
+	
 
 %]

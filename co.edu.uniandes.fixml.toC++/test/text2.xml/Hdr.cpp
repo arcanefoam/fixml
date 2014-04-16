@@ -21,20 +21,23 @@ public class Hdr {
 
   	// default constructor
 	public Hdr () {
-		Snt = 2001-12-17T09:30:47-05:00 ;
-	
-		PosDup = N ;
-	
-		PosRsnd = N ;
-	
-		SeqNum = 1002 ;
-	
-    
-		  Sndr_obj = new Sndr() ;
-		  Tgt_obj = new Tgt() ;
-		  OnBhlfOf_obj = new OnBhlfOf() ;
-		  DlvrTo_obj = new DlvrTo() ;
+		Snt = "2001-12-17T09:30:47-05:00" ;
+		PosDup = "N" ;
+		PosRsnd = "N" ;
+		SeqNum = "1002" ;
+		
+			Sndr_obj = new Sndr();
+		
+			Tgt_obj = new Tgt();
+		
+			OnBhlfOf_obj = new OnBhlfOf();
+		
+			DlvrTo_obj = new DlvrTo();
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Hdr (

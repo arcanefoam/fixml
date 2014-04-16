@@ -12,14 +12,14 @@ public class Qty {
 
   	// default constructor
 	public Qty () {
-		Typ = SOD ;
-	
-		Long = 35 ;
-	
-		Short = 0 ;
-	
-    
+		Typ = "SOD" ;
+		Long = "35" ;
+		Short = "0" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Qty (

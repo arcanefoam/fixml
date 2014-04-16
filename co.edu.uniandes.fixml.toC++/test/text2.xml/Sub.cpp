@@ -11,12 +11,13 @@ public class Sub {
 
   	// default constructor
 	public Sub () {
-		ID = ZZZ ;
-	
-		Typ = 2 ;
-	
-    
+		ID = "ZZZ" ;
+		Typ = "2" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Sub (

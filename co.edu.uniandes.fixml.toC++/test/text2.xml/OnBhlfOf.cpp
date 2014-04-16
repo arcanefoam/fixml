@@ -12,14 +12,14 @@ public class OnBhlfOf {
 
   	// default constructor
 	public OnBhlfOf () {
-		ID = String ;
-	
-		Sub = String ;
-	
-		Loc = String ;
-	
-    
+		ID = "String" ;
+		Sub = "String" ;
+		Loc = "String" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public OnBhlfOf (

@@ -33,133 +33,46 @@ public class PosRpt {
 
   	// default constructor
 	public PosRpt () {
-		RptID = 541386431 ;
-	
-		Rslt = 0 ;
-	
-		BizDt = 2003-03-10T00:00:00 ;
-	
-		Acct = 1 ;
-	
-		AcctTyp = 1 ;
-	
-		SetPx = 0.00 ;
-	
-		SetPxTyp = 1 ;
-	
-		PriSetPx = 0.00 ;
-	
-		ReqTyp = 0 ;
-	
-		Ccy = USD ;
-	
-    
-		
-			Hdr Hdr_1 = new Hdr(
-						    	"2001-12-17T09:30:47-05:00",
-						    	"N",
-						    	"N",
-						    	"1002",	    
-				    new Sndr (	"String",
-				    	    	"String",
- 						    	"String",
- 						),				    		
-				    new Tgt (  	"String",
- 						    	"String",
- 						    	"String",
- 						),				    		
-				    new OnBhlfOf (	"String",
- 							    	"String",
- 							    	"String",
- 						),				    		
-				    new DlvrTo (	"String",
- 							    	"String",
- 							    	"String",
- 						),				    		
-			);
-		
-			Pty Pty_1 = new Pty(
-						    	"OCC",
-						    	"21",
-			
-				    
-				    new Sub (
-							    	"ZZZ",
- 
- 
- 
-							    	"2",
- 
-						),				    		
-	
-			);
-		
-			Pty Pty_2 = new Pty(
-						    	"99999",
-						    	"4",
-			
-				    
-				    new Sub (
-							    	"ZZZ",
- 
- 
- 
-							    	"2",
- 
-						),				    		
-	
-			);
-		
-			Pty Pty_3 = new Pty(
-						    	"C",
-						    	"38",
-			
-				    
-				    new Sub (
-							    	"ZZZ",
- 
- 
- 
-							    	"2",
- 
-						),				    		
-	
-			);
-		
-			Qty Qty_1 = new Qty(
-						    	"SOD",
-						    	"35",
-						    	"0",
-			);
-		
-			Qty Qty_2 = new Qty(
-						    	"FIN",
-						    	"20",
-						    	"10",
-			);
-		
-			Qty Qty_3 = new Qty(
-						    	"IAS",
-						    	"10",
-			);
-		
-			Amt Amt_1 = new Amt(
-						    	"FMTM",
-						    	"0.00",
-			);
-		
-			Instrmt Instrmt_1 = new Instrmt(
-						    	"AOL",
-						    	"KW",
-						    	"3",
-						    	"OCASPS",
-						    	"20031122",
-						    	"2003-11-22T00:00:00",
-						    	"47.50",
-						    	"USD",
-						    	"100",
-			);
+		RptID = "541386431" ;
+		Rslt = "0" ;
+		BizDt = "2003-03-10T00:00:00" ;
+		Acct = "1" ;
+		AcctTyp = "1" ;
+		SetPx = "0.00" ;
+		SetPxTyp = "1" ;
+		PriSetPx = "0.00" ;
+		ReqTyp = "0" ;
+		Ccy = "USD" ;
+
+
+		HdrHdr_1= newHdr("2001-12-17T09:30:47-05:00","N","N","1002"
+				, new Sndr("String","String","String")
+				, new Tgt("String","String","String")
+				, new OnBhlfOf("String","String","String")
+				, new DlvrTo("String","String","String"));
+
+		PtyPty_1= newPty("OCC","21"
+				, new Sub("ZZZ","2"));
+
+		PtyPty_2= newPty("99999","4"
+				, new Sub("ZZZ","2"));
+
+		PtyPty_3= newPty("C","38"
+				, new Sub("ZZZ","2"));
+
+		QtyQty_1= newQty("SOD","35","0");
+
+		QtyQty_2= newQty("FIN","20","10");
+
+		QtyQty_3= newQty("IAS","10","null");
+
+		AmtAmt_1= newAmt("FMTM","0.00");
+
+		InstrmtInstrmt_1= newInstrmt("AOL","KW","3","OCASPS","20031122","2003-11-22T00:00:00","47.50","USD","100");  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public PosRpt (

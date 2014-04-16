@@ -12,14 +12,14 @@ public class Sndr {
 
   	// default constructor
 	public Sndr () {
-		ID = String ;
-	
-		Sub = String ;
-	
-		Loc = String ;
-	
-    
+		ID = "String" ;
+		Sub = "String" ;
+		Loc = "String" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Sndr (

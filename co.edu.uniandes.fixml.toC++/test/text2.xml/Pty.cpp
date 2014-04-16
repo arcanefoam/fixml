@@ -13,13 +13,15 @@ public class Pty {
 
   	// default constructor
 	public Pty () {
-		ID = OCC ;
-	
-		R = 21 ;
-	
-    
-		  Sub_obj = new Sub() ;
+		ID = "OCC" ;
+		R = "21" ;
+		
+			Sub_obj = new Sub();
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Pty (

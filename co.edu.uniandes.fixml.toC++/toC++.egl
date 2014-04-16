@@ -3,8 +3,8 @@ package [%= Model.allInstances.first().name %];
 
 public class [%= clazz.name %] {
 
-	private:
-	[% for (attribute in clazz.attributes ) { %]
+	private:[%="\n"%][% 
+	for (attribute in clazz.attributes ) { %]
   	String [%= attribute.name  %];
 	[% } %]
 
@@ -19,27 +19,26 @@ public class [%= clazz.name %] {
  	public: 
 
   	// default constructor
-	public [%= clazz.name %] () {
-	[% for (att in clazz.attributes) { %]
-		[%= att.name %] = [% for (value in clazz.instances.first.values) { %]
-		    					[% if (value.attribute == att) { %]
-[%= value.text %] ;
-		    					[% } %]
-							[% } %]	
-	[% } %]
-    
-	[% if ( clazz.eContainer().isTypeOf( Model ) ) { %]
-		[% for (subClazz in clazz.clazzes ) { %]
-			[%
+	public [%= clazz.name %] () {[%="\n"%][%
+	
+	for (att in clazz.attributes) { %]
+		[%= att.name%] = "[%=valueFor(clazz.instances.first, att)%]" ;
+	[% }
+	
+	if ( clazz.eContainer().isTypeOf( Model ) ) {  
+		for (subClazz in clazz.clazzes ) { 
 			subClazz.initialization2('');
-			%]
-		[% } %]
-	[% }else{%]
-		[% for (subClazz in clazz.clazzes ) { %]
-		  [%= subClazz.name%]_obj = new [%= subClazz.name%]() ;
-		[% } %]
-	[% }%]
+		} 
+	}else{
+		for (subClazz in clazz.clazzes ) { %]		
+			[%= subClazz.name%]_obj = new [%= subClazz.name%]();
+		[% } 
+	} %]
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public [%= clazz.name %] (

@@ -18,26 +18,20 @@ public class Instrmt {
 
   	// default constructor
 	public Instrmt () {
-		Sym = AOL ;
-	
-		ID = KW ;
-	
-		IDSrc = 3 ;
-	
-		CFI = OCASPS ;
-	
-		MMY = 20031122 ;
-	
-		Mat = 2003-11-22T00:00:00 ;
-	
-		Strk = 47.50 ;
-	
-		StrkCcy = USD ;
-	
-		Mult = 100 ;
-	
-    
+		Sym = "AOL" ;
+		ID = "KW" ;
+		IDSrc = "3" ;
+		CFI = "OCASPS" ;
+		MMY = "20031122" ;
+		Mat = "2003-11-22T00:00:00" ;
+		Strk = "47.50" ;
+		StrkCcy = "USD" ;
+		Mult = "100" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Instrmt (

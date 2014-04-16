@@ -12,14 +12,14 @@ public class Tgt {
 
   	// default constructor
 	public Tgt () {
-		ID = String ;
-	
-		Sub = String ;
-	
-		Loc = String ;
-	
-    
+		ID = "String" ;
+		Sub = "String" ;
+		Loc = "String" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Tgt (

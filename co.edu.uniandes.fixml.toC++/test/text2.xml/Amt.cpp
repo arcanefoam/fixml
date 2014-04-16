@@ -11,12 +11,13 @@ public class Amt {
 
   	// default constructor
 	public Amt () {
-		Typ = FMTM ;
-	
-		Amt = 0.00 ;
-	
-    
+		Typ = "FMTM" ;
+		Amt = "0.00" ;
+  	
   	}
+  	
+  	
+  	
   
   	// by parameters
   	public Amt (
