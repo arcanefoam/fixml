@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simplexml:XMLNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simplexml="http://uniandes.edu.co/0.1/SimpleXML" tag="FIXML">
+  <subnodes tag="Order">
+    <attributes name="Acct" value="26522154"/>
+    <attributes name="ClOrdID" value="123456"/>
+    <attributes name="OrdTyp" value="2"/>
+    <attributes name="Px" value="93.25"/>
+    <attributes name="Side" value="2"/>
+    <attributes name="TransactTm" value="2001-09-11T09:30:47-05:00"/>
+    <subnodes tag="Hdr">
+      <attributes name="PosDup" value="N"/>
+      <attributes name="PosRsnd" value="N"/>
+      <attributes name="SeqNum" value="521"/>
+      <attributes name="Snt" value="2001-09-11T09:30:47-05:00"/>
+      <subnodes tag="Sndr">
+        <attributes name="ID" value="AFUNDMGR"/>
+      </subnodes>
+      <subnodes tag="Tgt">
+        <attributes name="ID" value="ABROKER"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Instrmt">
+      <attributes name="ID" value="459200101"/>
+      <attributes name="IDSrc" value="1"/>
+      <attributes name="Sym" value="IBM"/>
+    </subnodes>
+    <subnodes tag="OrdQty">
+      <attributes name="Qty" value="1000"/>
+    </subnodes>
+  </subnodes>
+</simplexml:XMLNode>

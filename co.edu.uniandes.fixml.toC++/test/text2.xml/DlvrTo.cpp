@@ -1,32 +1,30 @@
-package text2.xml;
+#include <iostream> 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+using namespace std;
 
-public class DlvrTo {
+class DlvrTo {
 
 	private:
-  	String ID;
-  	String Sub;
-  	String Loc;
+  	string ID_;
+  	string Sub_;
+  	string Loc_;
  	
  	public: 
 
   	// default constructor
-	public DlvrTo () {
-		ID = "String";
-		Sub = "String";
-		Loc = "String";
+	DlvrTo () {
+		ID_ = "String";
+		Sub_ = "String";
+		Loc_ = "String";
   	
   	}
   
   	// by parameters
-  	public DlvrTo (		String ID_, String Sub_, String Loc_){
+  	DlvrTo (		string ID_p, string Sub_p, string Loc_p){
 	  
-		ID = ID_;
-		Sub = Sub_;
-		Loc = Loc_;
+		ID_ = ID_p;
+		Sub_ = Sub_p;
+		Loc_ = Loc_p;
 	  
-  }
-} 
+  	}
+};

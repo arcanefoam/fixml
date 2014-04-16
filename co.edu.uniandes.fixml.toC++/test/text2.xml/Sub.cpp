@@ -1,29 +1,27 @@
-package text2.xml;
+#include <iostream> 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+using namespace std;
 
-public class Sub {
+class Sub {
 
 	private:
-  	String ID;
-  	String Typ;
+  	string ID_;
+  	string Typ_;
  	
  	public: 
 
   	// default constructor
-	public Sub () {
-		ID = "ZZZ";
-		Typ = "2";
+	Sub () {
+		ID_ = "ZZZ";
+		Typ_ = "2";
   	
   	}
   
   	// by parameters
-  	public Sub (		String ID_, String Typ_){
+  	Sub (		string ID_p, string Typ_p){
 	  
-		ID = ID_;
-		Typ = Typ_;
+		ID_ = ID_p;
+		Typ_ = Typ_p;
 	  
-  }
-} 
+  	}
+};

@@ -1,34 +1,31 @@
-package text2.xml;
+#include <iostream> 
+ #include "Sub.cpp" 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
-#include "Sub.h" 
+using namespace std;
 
-public class Pty {
+class Pty {
 
 	private:
-  	String ID;
-  	String R;
+  	string ID_;
+  	string R_;
 	Sub* Sub_1;
  	
  	public: 
 
   	// default constructor
-	public Pty () {
-		ID = "OCC";
-		R = "21";
-		
-			Sub_obj = new Sub();
+	Pty () {
+		ID_ = "OCC";
+		R_ = "21";
+		Sub_1 = new Sub();
   	
   	}
   
   	// by parameters
-  	public Pty (		String ID_, String R_, Sub* Sub_1){
+  	Pty (		string ID_p, string R_p, Sub* Sub_1){
 	  
-		ID = ID_;
-		R = R_;
+		ID_ = ID_p;
+		R_ = R_p;
 	  
-		this.Sub_1 = Sub_1;
-  }
-} 
+		this->Sub_1 = Sub_1;
+  	}
+};
