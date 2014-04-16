@@ -17,8 +17,10 @@ class [%= clazz.name %] {
 
   // default constructor
 [*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
-    We can shortcut because we are using EMF-based models            *]
-[% if ( clazz.eContainer().isTypeOf( Model ) ) { %][% } %]
+    We can shortcut because we are using EMF-based models           
+if ( clazz.eContainer().isTypeOf( Model ) ) { %][% }
+*]
+[% if ( clazz == Clazz.all().first.clazzes.first ) {%][% } %]
   public [%= clazz.name %] ( ) {   
     [% 
       var firstInstance : Instance = clazz.instances.first; 

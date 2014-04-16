@@ -3,36 +3,36 @@
 operation valueFor( instance : Instance, attribute : Attribute ) : String {
 	for ( value in instance.values ) {
 		if ( value.attribute == attribute) {
-		   	return value.text;
+		   	return '"' +value.text + '"';
 		}
 	}
 	return "null";
 }
 
-operation Instance declaration( prefix : String  ) {
+operation Instance declaration( prefix : String, pos : Integer ) {
   
-	var selfname : String = prefix + self.name;
+	var selfname : String = prefix + self.name + "_" + pos;
   	  	
-  %][%= self.clazz.name %] [%= selfname %]= new [%= self.clazz.name %]([%= self.clazz.attributes.collect( attr | '"' + valueFor( self, attr ) + '"').concat(', ') %]);
+  %][%= self.clazz.name %] [%= selfname %]= new [%= self.clazz.name %]([%= self.clazz.attributes.collect( attr | valueFor( self, attr ) ).concat(', ') %]);
   [% 
   	for ( instance in self.children ) {
-  		instance.declaration( selfname + '_' );
-  		%][%= selfname %].add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		instance.declaration( selfname + '_' , self.children.indexOf(instance) );
+  		%][%= selfname %].add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name + '_' + self.children.indexOf(instance) %] );
   		
   		[%  
   	} 	
 } 		
 
-operation Instance initialization( prefix : String  ) {
+operation Instance initialization( prefix : String ) {
   
-	var selfname : String = prefix + self.name;
+	var selfname : String = prefix + self.name  ;
   	  	
-  %][%= self.clazz.attributes.collect( attr | 'this.' + attr.name + ' = "' + valueFor( self, attr ) + '"').concat(';\n') %];
+  %][%= self.clazz.attributes.collect( attr | 'this.' + attr.name + ' = ' + valueFor( self, attr ) ).concat(';\n') %];
   
   [% 
   	for ( instance in self.children ) {
-  		instance.declaration( selfname + '_' );
-  		%]this.add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name %] );
+  		instance.declaration( selfname + '_' , self.children.indexOf(instance) );
+  		%]this.add[%=instance.clazz.name%]( [%= selfname + '_'+ instance.name + '_' + self.children.indexOf(instance) %] );
   		
   		[%  
   	} 	

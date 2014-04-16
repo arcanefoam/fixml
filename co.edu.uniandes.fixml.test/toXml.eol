@@ -1,32 +1,4 @@
-objectModel.println();
-
 processNode( '', XmlDoc.root );
-
-
-
-/*
-XmlDoc.root.println();
-
-var root = XmlDoc.root.firstChild.nextSibling;
-root.hasChildNodes().println();
-
-root.tagName.println();
-
-var i  = 0;
-( "has attributes :" + root.hasAttributes()).println();
-while ( i < root.attributes.length ) {
-  root.attributes.item( i ).nodeName.println();
-  root.attributes.item( i ).nodeValue.println();
-  i = i + 1;
-} 
-
-( "has children :" + root.hasChildNodes()).println();
-i = 0;
-while ( i < root.childNodes.length ) {
-  root.childNodes.item( i ).println();
-  i = i+1;
-}
-*/
 
 operation processNode( prefix, node ) : objectModel!XMLNode {
 
@@ -37,8 +9,7 @@ operation processNode( prefix, node ) : objectModel!XMLNode {
 	var xmlNode = new objectModel!XMLNode;
 	xmlNode.tag = node.nodeName;
 
-	var i  = 0;
-	// ( "has attributes :" + root.hasAttributes()).println();
+	var i = 0;
 	while ( i < node.attributes.length ) {
 	
 		var attribute = new objectModel!XMLAttribute;
@@ -50,7 +21,6 @@ operation processNode( prefix, node ) : objectModel!XMLNode {
 		i = i + 1;
 	} 
 	
-  	// ( "has children :" + root.hasChildNodes()).println();
 	i = 0;
 	while ( i < node.childNodes.length ) {
 	
@@ -58,7 +28,7 @@ operation processNode( prefix, node ) : objectModel!XMLNode {
 		if ( child.nodeType == 1 or child.nodeType == 2 ) {
 			xmlNode.subnodes.add( processNode( (prefix + node.nodeName+ "_" ), child ) );
 		}
-		i = i+1;
+		i = i + 1;
   	}
   	return xmlNode;	
   }

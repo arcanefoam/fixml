@@ -7,7 +7,7 @@
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <intAttribute key="generateTo" value="1"/>
 <listAttribute key="models">
-<listEntry value="#&#13;&#10;#Wed Apr 16 10:25:58 COT 2014&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=objectModel&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=test1.xml&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://www.eclipse.org/emf/2002/Ecore,http\://uniandes.edu.co/0.1/SimpleObject&#13;&#10;modelUri=platform\:/resource/co.edu.uniandes.fixml.simpleObject/model/test2.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/co.edu.uniandes.fixml.simpleObject/model/test2.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Wed Apr 16 17:40:25 COT 2014&#13;&#10;isMetamodelFileBased=false&#13;&#10;name=objectModel&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=test2.xml&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelUri=http\://www.eclipse.org/emf/2002/Ecore,http\://uniandes.edu.co/0.1/SimpleObject&#13;&#10;modelUri=platform\:/resource/co.edu.uniandes.fixml.test/object/test2.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/co.edu.uniandes.fixml.test/object/test2.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=&#13;&#10;"/>
 </listAttribute>
 <stringAttribute key="outputFilePath" value=""/>
 <booleanAttribute key="produceTrace" value="false"/>

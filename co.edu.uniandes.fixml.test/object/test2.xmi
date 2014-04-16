@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simpleObject="http://uniandes.edu.co/0.1/SimpleObject">
+  <simpleObject:Model name="object"/>
+  <simpleObject:Clazz name="FIXML" clazzes="/2">
+    <instances name="FIXML" children="/2/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="PosRpt" clazzes="/3 /8 /10 /11 /12">
+    <attributes name="Acct" values="/2/@instances.0/@values.0"/>
+    <attributes name="AcctTyp" values="/2/@instances.0/@values.1"/>
+    <attributes name="BizDt" values="/2/@instances.0/@values.2"/>
+    <attributes name="Ccy" values="/2/@instances.0/@values.3"/>
+    <attributes name="PriSetPx" values="/2/@instances.0/@values.4"/>
+    <attributes name="ReqTyp" values="/2/@instances.0/@values.5"/>
+    <attributes name="RptID" values="/2/@instances.0/@values.6"/>
+    <attributes name="Rslt" values="/2/@instances.0/@values.7"/>
+    <attributes name="SetPx" values="/2/@instances.0/@values.8"/>
+    <attributes name="SetPxTyp" values="/2/@instances.0/@values.9"/>
+    <instances name="PosRpt" children="/3/@instances.0 /8/@instances.0 /8/@instances.1 /8/@instances.2 /10/@instances.0 /10/@instances.1 /10/@instances.2 /11/@instances.0 /12/@instances.0">
+      <values text="1" attribute="/2/@attributes.0"/>
+      <values text="1" attribute="/2/@attributes.1"/>
+      <values text="2003-09-10T00:00:00" attribute="/2/@attributes.2"/>
+      <values text="USD" attribute="/2/@attributes.3"/>
+      <values text="0.00" attribute="/2/@attributes.4"/>
+      <values text="0" attribute="/2/@attributes.5"/>
+      <values text="541386431" attribute="/2/@attributes.6"/>
+      <values text="0" attribute="/2/@attributes.7"/>
+      <values text="0.00" attribute="/2/@attributes.8"/>
+      <values text="1" attribute="/2/@attributes.9"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Hdr" clazzes="/4 /5 /6 /7">
+    <attributes name="PosDup" values="/3/@instances.0/@values.0"/>
+    <attributes name="PosRsnd" values="/3/@instances.0/@values.1"/>
+    <attributes name="SeqNum" values="/3/@instances.0/@values.2"/>
+    <attributes name="Snt" values="/3/@instances.0/@values.3"/>
+    <instances name="Hdr" children="/4/@instances.0 /5/@instances.0 /6/@instances.0 /7/@instances.0">
+      <values text="N" attribute="/3/@attributes.0"/>
+      <values text="N" attribute="/3/@attributes.1"/>
+      <values text="1002" attribute="/3/@attributes.2"/>
+      <values text="2001-12-17T09:30:47-05:00" attribute="/3/@attributes.3"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sndr">
+    <attributes name="ID" values="/4/@instances.0/@values.0"/>
+    <attributes name="Loc" values="/4/@instances.0/@values.1"/>
+    <attributes name="Sub" values="/4/@instances.0/@values.2"/>
+    <instances name="Sndr">
+      <values text="String" attribute="/4/@attributes.0"/>
+      <values text="String" attribute="/4/@attributes.1"/>
+      <values text="String" attribute="/4/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Tgt">
+    <attributes name="ID" values="/5/@instances.0/@values.0"/>
+    <attributes name="Loc" values="/5/@instances.0/@values.1"/>
+    <attributes name="Sub" values="/5/@instances.0/@values.2"/>
+    <instances name="Tgt">
+      <values text="String" attribute="/5/@attributes.0"/>
+      <values text="String" attribute="/5/@attributes.1"/>
+      <values text="String" attribute="/5/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OnBhlfOf">
+    <attributes name="ID" values="/6/@instances.0/@values.0"/>
+    <attributes name="Loc" values="/6/@instances.0/@values.1"/>
+    <attributes name="Sub" values="/6/@instances.0/@values.2"/>
+    <instances name="OnBhlfOf">
+      <values text="String" attribute="/6/@attributes.0"/>
+      <values text="String" attribute="/6/@attributes.1"/>
+      <values text="String" attribute="/6/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="DlvrTo">
+    <attributes name="ID" values="/7/@instances.0/@values.0"/>
+    <attributes name="Loc" values="/7/@instances.0/@values.1"/>
+    <attributes name="Sub" values="/7/@instances.0/@values.2"/>
+    <instances name="DlvrTo">
+      <values text="String" attribute="/7/@attributes.0"/>
+      <values text="String" attribute="/7/@attributes.1"/>
+      <values text="String" attribute="/7/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Pty" clazzes="/9">
+    <attributes name="ID" values="/8/@instances.0/@values.0 /8/@instances.1/@values.0 /8/@instances.2/@values.0"/>
+    <attributes name="R" values="/8/@instances.0/@values.1 /8/@instances.1/@values.1 /8/@instances.2/@values.1"/>
+    <instances name="Pty">
+      <values text="OCC" attribute="/8/@attributes.0"/>
+      <values text="21" attribute="/8/@attributes.1"/>
+    </instances>
+    <instances name="Pty">
+      <values text="99999" attribute="/8/@attributes.0"/>
+      <values text="4" attribute="/8/@attributes.1"/>
+    </instances>
+    <instances name="Pty" children="/9/@instances.0">
+      <values text="C" attribute="/8/@attributes.0"/>
+      <values text="38" attribute="/8/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sub">
+    <attributes name="ID" values="/9/@instances.0/@values.0"/>
+    <attributes name="Typ" values="/9/@instances.0/@values.1"/>
+    <instances name="Sub">
+      <values text="ZZZ" attribute="/9/@attributes.0"/>
+      <values text="2" attribute="/9/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Qty">
+    <attributes name="Long" values="/10/@instances.0/@values.0 /10/@instances.1/@values.0 /10/@instances.2/@values.0"/>
+    <attributes name="Short" values="/10/@instances.0/@values.1 /10/@instances.1/@values.1"/>
+    <attributes name="Typ" values="/10/@instances.0/@values.2 /10/@instances.1/@values.2 /10/@instances.2/@values.1"/>
+    <instances name="Qty">
+      <values text="35" attribute="/10/@attributes.0"/>
+      <values text="0" attribute="/10/@attributes.1"/>
+      <values text="SOD" attribute="/10/@attributes.2"/>
+    </instances>
+    <instances name="Qty">
+      <values text="20" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/10/@attributes.1"/>
+      <values text="FIN" attribute="/10/@attributes.2"/>
+    </instances>
+    <instances name="Qty">
+      <values text="10" attribute="/10/@attributes.0"/>
+      <values text="IAS" attribute="/10/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Amt">
+    <attributes name="Amt" values="/11/@instances.0/@values.0"/>
+    <attributes name="Typ" values="/11/@instances.0/@values.1"/>
+    <instances name="Amt">
+      <values text="0.00" attribute="/11/@attributes.0"/>
+      <values text="FMTM" attribute="/11/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Instrmt">
+    <attributes name="CFI" values="/12/@instances.0/@values.0"/>
+    <attributes name="ID" values="/12/@instances.0/@values.1"/>
+    <attributes name="IDSrc" values="/12/@instances.0/@values.2"/>
+    <attributes name="MMY" values="/12/@instances.0/@values.3"/>
+    <attributes name="Mat" values="/12/@instances.0/@values.4"/>
+    <attributes name="Mult" values="/12/@instances.0/@values.5"/>
+    <attributes name="Strk" values="/12/@instances.0/@values.6"/>
+    <attributes name="StrkCcy" values="/12/@instances.0/@values.7"/>
+    <attributes name="Sym" values="/12/@instances.0/@values.8"/>
+    <instances name="Instrmt">
+      <values text="OCASPS" attribute="/12/@attributes.0"/>
+      <values text="KW" attribute="/12/@attributes.1"/>
+      <values text="J" attribute="/12/@attributes.2"/>
+      <values text="20031122" attribute="/12/@attributes.3"/>
+      <values text="2003-11-22T00:00:00" attribute="/12/@attributes.4"/>
+      <values text="100" attribute="/12/@attributes.5"/>
+      <values text="47.50" attribute="/12/@attributes.6"/>
+      <values text="USD" attribute="/12/@attributes.7"/>
+      <values text="AOL" attribute="/12/@attributes.8"/>
+    </instances>
+  </simpleObject:Clazz>
+</xmi:XMI>

@@ -2,8 +2,8 @@
 <launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
 <booleanAttribute key="fine_grained_profiling" value="false"/>
 <listAttribute key="models">
-<listEntry value="#&#13;&#10;#Wed Apr 16 11:46:28 COT 2014&#13;&#10;name=XmlDoc&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;uri=&#13;&#10;cached=true&#13;&#10;file=/co.edu.uniandes.fixml.test/test_cases/test1.xml&#13;&#10;fileBased=true&#13;&#10;type=PlainXML&#13;&#10;"/>
-<listEntry value="#&#13;&#10;#Wed Apr 16 14:18:19 COT 2014&#13;&#10;isMetamodelFileBased=true&#13;&#10;name=objectModel&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=platform\:/resource/co.edu.uniandes.fixml/model/SimpleXML.ecore&#13;&#10;metamodelUri=&#13;&#10;modelUri=platform\:/resource/co.edu.uniandes.fixml.test/test1.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/co.edu.uniandes.fixml.test/test1.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=/co.edu.uniandes.fixml/model/SimpleXML.ecore&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Wed Apr 16 15:21:16 COT 2014&#13;&#10;name=XmlDoc&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;uri=file\:///C\:/Users/Jaime/git/fixml/co.edu.uniandes.fixml.test/test_cases/test1.xml&#13;&#10;cached=true&#13;&#10;file=&#13;&#10;fileBased=false&#13;&#10;type=PlainXML&#13;&#10;"/>
+<listEntry value="#&#13;&#10;#Wed Apr 16 15:21:22 COT 2014&#13;&#10;isMetamodelFileBased=true&#13;&#10;name=objectModel&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;aliases=&#13;&#10;cached=true&#13;&#10;fileBasedMetamodelUri=platform\:/resource/co.edu.uniandes.fixml/model/SimpleXML.ecore&#13;&#10;metamodelUri=&#13;&#10;modelUri=platform\:/resource/co.edu.uniandes.fixml.test/xml/test1.xmi&#13;&#10;type=EMF&#13;&#10;modelFile=/co.edu.uniandes.fixml.test/xml/test1.xmi&#13;&#10;expand=true&#13;&#10;metamodelFile=/co.edu.uniandes.fixml/model/SimpleXML.ecore&#13;&#10;"/>
 </listAttribute>
 <booleanAttribute key="profile_model_loading" value="false"/>
 <booleanAttribute key="profiling_enabled" value="false"/>

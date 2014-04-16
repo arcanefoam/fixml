@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simplexml:XMLNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simplexml="http://uniandes.edu.co/0.1/SimpleXML" tag="FIXML">
+  <subnodes tag="PosRpt">
+    <attributes name="Acct" value="1"/>
+    <attributes name="AcctTyp" value="1"/>
+    <attributes name="BizDt" value="2003-09-10T00:00:00"/>
+    <attributes name="Ccy" value="USD"/>
+    <attributes name="PriSetPx" value="0.00"/>
+    <attributes name="ReqTyp" value="0"/>
+    <attributes name="RptID" value="541386431"/>
+    <attributes name="Rslt" value="0"/>
+    <attributes name="SetPx" value="0.00"/>
+    <attributes name="SetPxTyp" value="1"/>
+    <subnodes tag="Hdr">
+      <attributes name="PosDup" value="N"/>
+      <attributes name="PosRsnd" value="N"/>
+      <attributes name="SeqNum" value="1002"/>
+      <attributes name="Snt" value="2001-12-17T09:30:47-05:00"/>
+      <subnodes tag="Sndr">
+        <attributes name="ID" value="String"/>
+        <attributes name="Loc" value="String"/>
+        <attributes name="Sub" value="String"/>
+      </subnodes>
+      <subnodes tag="Tgt">
+        <attributes name="ID" value="String"/>
+        <attributes name="Loc" value="String"/>
+        <attributes name="Sub" value="String"/>
+      </subnodes>
+      <subnodes tag="OnBhlfOf">
+        <attributes name="ID" value="String"/>
+        <attributes name="Loc" value="String"/>
+        <attributes name="Sub" value="String"/>
+      </subnodes>
+      <subnodes tag="DlvrTo">
+        <attributes name="ID" value="String"/>
+        <attributes name="Loc" value="String"/>
+        <attributes name="Sub" value="String"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="OCC"/>
+      <attributes name="R" value="21"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="99999"/>
+      <attributes name="R" value="4"/>
+    </subnodes>
+    <subnodes tag="Pty">
+      <attributes name="ID" value="C"/>
+      <attributes name="R" value="38"/>
+      <subnodes tag="Sub">
+        <attributes name="ID" value="ZZZ"/>
+        <attributes name="Typ" value="2"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="35"/>
+      <attributes name="Short" value="0"/>
+      <attributes name="Typ" value="SOD"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="20"/>
+      <attributes name="Short" value="10"/>
+      <attributes name="Typ" value="FIN"/>
+    </subnodes>
+    <subnodes tag="Qty">
+      <attributes name="Long" value="10"/>
+      <attributes name="Typ" value="IAS"/>
+    </subnodes>
+    <subnodes tag="Amt">
+      <attributes name="Amt" value="0.00"/>
+      <attributes name="Typ" value="FMTM"/>
+    </subnodes>
+    <subnodes tag="Instrmt">
+      <attributes name="CFI" value="OCASPS"/>
+      <attributes name="ID" value="KW"/>
+      <attributes name="IDSrc" value="J"/>
+      <attributes name="MMY" value="20031122"/>
+      <attributes name="Mat" value="2003-11-22T00:00:00"/>
+      <attributes name="Mult" value="100"/>
+      <attributes name="Strk" value="47.50"/>
+      <attributes name="StrkCcy" value="USD"/>
+      <attributes name="Sym" value="AOL"/>
+    </subnodes>
+  </subnodes>
+</simplexml:XMLNode>

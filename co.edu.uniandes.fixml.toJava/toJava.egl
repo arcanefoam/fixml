@@ -14,20 +14,24 @@ public class [%= clazz.name %] {
   String [%= attribute.name  %];
 [% } %]
 
-[% for (subclazz in clazz.clazzes) { %]
-  List<[%= subclazz.name %]> [%= subclazz.name %]s = new ArrayList<[%= subclazz.name %]>();
+[% for (subClazz in clazz.clazzes) { %]
+  List<[%= subClazz.name %]> [%= subClazz.name %]s = new ArrayList<[%= subClazz.name %]>();
 [% } %]
 
+[% if ( clazz.attributes.size > 0 ) { %]
   // default constructor
   public [%= clazz.name %] ( [%= clazz.attributes.collect(a|"String " + a.name).concat(", ") %] ) {
   [% for (attribute in clazz.attributes ) { %]
     this.[%= attribute.name  %] = [%= attribute.name  %];
   [% } %]  
   }
+[% } %]
 
 [*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
-    We can shortcut because we are using EMF-based models            *]
-[% if ( clazz.eContainer().isTypeOf( Model ) ) { %][% } %]
+    We can shortcut because we are using EMF-based models            
+    if ( clazz.eContainer().isTypeOf( Model ) ) { 
+    *]
+[% if ( clazz == Clazz.all().first.clazzes.first ) {%][% } %]
   public [%= clazz.name %] ( ) {   
   
     [% 

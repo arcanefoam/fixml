@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simplexml:XMLNode xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simplexml="http://uniandes.edu.co/0.1/SimpleXML" tag="FIXML">
+  <subnodes tag="FIXMLMessage">
+    <subnodes tag="ApplicationMessage">
+      <subnodes tag="Order">
+        <subnodes tag="ClOrdID"/>
+        <subnodes tag="HandInst">
+          <attributes name="Value" value="2"/>
+        </subnodes>
+        <subnodes tag="MinQty"/>
+        <subnodes tag="Instrument">
+          <subnodes tag="Symbol"/>
+          <subnodes tag="IDSource"/>
+          <subnodes tag="SecurityID"/>
+        </subnodes>
+        <subnodes tag="Side">
+          <attributes name="Value" value="1"/>
+        </subnodes>
+        <subnodes tag="TransactTime"/>
+        <subnodes tag="OrderQuantity">
+          <subnodes tag="OrderQty"/>
+        </subnodes>
+        <subnodes tag="OrderType">
+          <subnodes tag="LimitOrder">
+            <attributes name="Value" value="2"/>
+            <subnodes tag="Price"/>
+          </subnodes>
+        </subnodes>
+        <subnodes tag="Currency">
+          <attributes name="Value" value="USD"/>
+        </subnodes>
+        <subnodes tag="Rule80A">
+          <attributes name="Value" value="A"/>
+        </subnodes>
+      </subnodes>
+    </subnodes>
+  </subnodes>
+</simplexml:XMLNode>

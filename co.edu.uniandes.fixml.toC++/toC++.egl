@@ -12,6 +12,10 @@ class [%= clazz.name %] {
 	[% } %][%
 
 	for (subClazz in clazz.clazzes ) {
+	
+		subClazz.println(); 
+		subClazz.name.println();
+	
 		var cont: Integer = 1;
 		for (instance in subClazz.instances ) { %]
 	[%= subClazz.name%]* [%= subClazz.name%]_[%= cont%];[% 
@@ -28,7 +32,8 @@ class [%= clazz.name %] {
 		[%= att.name%]_ = [%=valueFor2(clazz.instances.first, att)%];
 	[% }
 	
-	if ( clazz.eContainer().isTypeOf( Model ) ) {  
+	// if ( clazz.eContainer().isTypeOf( Model ) ) {  
+	if ( clazz == Clazz.all().first.clazzes.first ) {
 		for (subClazz in clazz.clazzes ) { 
 			subClazz.initialization2('');
 		} 
@@ -36,7 +41,8 @@ class [%= clazz.name %] {
 		for (subClazz in clazz.clazzes ) {		
 			subClazz.initialization2WithOutParam('');
 		} 
-	} %]
+	} 
+	%]
   	
   	}
   
