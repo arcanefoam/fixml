@@ -1,19 +1,14 @@
-[% import 'toC++Utils.egl'; %]
-package [%= Model.allInstances.first().name %];
-
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
-[%
-for (subClazz in clazz.clazzes ) { %]
-#include "[%= subClazz.name%].h" 
+[% import 'toC++Utils.egl';%]#include <iostream> 
+[%for (subClazz in clazz.clazzes ) { %] #include "[%= subClazz.name%].cpp" 
 [% } %]
 
-public class [%= clazz.name %] {
+using namespace std;
+
+class [%= clazz.name %] {
 
 	private:[%="\n"%][% 
 	for (attribute in clazz.attributes ) { %]
-  	String [%= attribute.name  %];
+  	string [%= attribute.name  %]_;
 	[% } %][%
 
 	for (subClazz in clazz.clazzes ) {
@@ -27,10 +22,10 @@ public class [%= clazz.name %] {
  	public: 
 
   	// default constructor
-	public [%= clazz.name %] () {[%="\n"%][%
+	[%= clazz.name %] () {[%="\n"%][%
 	
 	for (att in clazz.attributes) { %]
-		[%= att.name%] = [%=valueFor2(clazz.instances.first, att)%];
+		[%= att.name%]_ = [%=valueFor2(clazz.instances.first, att)%];
 	[% }
 	
 	if ( clazz.eContainer().isTypeOf( Model ) ) {  
@@ -38,17 +33,17 @@ public class [%= clazz.name %] {
 			subClazz.initialization2('');
 		} 
 	}else{
-		for (subClazz in clazz.clazzes ) { %]		
-			[%= subClazz.name%]_obj = new [%= subClazz.name%]();
-		[% } 
+		for (subClazz in clazz.clazzes ) {		
+			subClazz.initialization2WithOutParam('');
+		} 
 	} %]
   	
   	}
   
   	// by parameters
-  	public [%= clazz.name %] ([%
+  	[%= clazz.name %] ([%
 		var parameters : String = "";
-	  	parameters = clazz.attributes.collect(a|"String " + a.name + "_").concat(", "); 
+	  	parameters = clazz.attributes.collect(a|"string " + a.name + "_p").concat(", "); 
       	for (subClazz in clazz.clazzes ) {
 			var cont: Integer = 1;
 			for (instance in subClazz.instances ) {
@@ -58,14 +53,14 @@ public class [%= clazz.name %] {
 		}%]
 		[%=parameters%]){
 	  
-		[%= clazz.attributes.collect(a|a.name + " = " + a.name + "_").concat(";\n\t\t")%];
+		[%= clazz.attributes.collect(a|a.name + "_ = " + a.name + "_p").concat(";\n\t\t")%];
 	  
 		[%for (subClazz in clazz.clazzes ){
 			var cont: Integer = 1;
 			for (instance in subClazz.instances ) { %]
-		this.[%= subClazz.name%]_[%= cont%] = [%= subClazz.name%]_[%= cont%];[%="\n"%] [% 
+		this->[%= subClazz.name%]_[%= cont%] = [%= subClazz.name%]_[%= cont%];[%="\n"%] [% 
 			cont = cont+1;
 			}	
 		}%]
-  }
-} 
+  	}
+};

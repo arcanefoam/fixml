@@ -1,50 +1,48 @@
-package text2.xml;
+#include <iostream> 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+using namespace std;
 
-public class Instrmt {
+class Instrmt {
 
 	private:
-  	String Sym;
-  	String ID;
-  	String IDSrc;
-  	String CFI;
-  	String MMY;
-  	String Mat;
-  	String Strk;
-  	String StrkCcy;
-  	String Mult;
+  	string Sym_;
+  	string ID_;
+  	string IDSrc_;
+  	string CFI_;
+  	string MMY_;
+  	string Mat_;
+  	string Strk_;
+  	string StrkCcy_;
+  	string Mult_;
  	
  	public: 
 
   	// default constructor
-	public Instrmt () {
-		Sym = "AOL";
-		ID = "KW";
-		IDSrc = "3";
-		CFI = "OCASPS";
-		MMY = "20031122";
-		Mat = "2003-11-22T00:00:00";
-		Strk = "47.50";
-		StrkCcy = "USD";
-		Mult = "100";
+	Instrmt () {
+		Sym_ = "AOL";
+		ID_ = "KW";
+		IDSrc_ = "3";
+		CFI_ = "OCASPS";
+		MMY_ = "20031122";
+		Mat_ = "2003-11-22T00:00:00";
+		Strk_ = "47.50";
+		StrkCcy_ = "USD";
+		Mult_ = "100";
   	
   	}
   
   	// by parameters
-  	public Instrmt (		String Sym_, String ID_, String IDSrc_, String CFI_, String MMY_, String Mat_, String Strk_, String StrkCcy_, String Mult_){
+  	Instrmt (		string Sym_p, string ID_p, string IDSrc_p, string CFI_p, string MMY_p, string Mat_p, string Strk_p, string StrkCcy_p, string Mult_p){
 	  
-		Sym = Sym_;
-		ID = ID_;
-		IDSrc = IDSrc_;
-		CFI = CFI_;
-		MMY = MMY_;
-		Mat = Mat_;
-		Strk = Strk_;
-		StrkCcy = StrkCcy_;
-		Mult = Mult_;
+		Sym_ = Sym_p;
+		ID_ = ID_p;
+		IDSrc_ = IDSrc_p;
+		CFI_ = CFI_p;
+		MMY_ = MMY_p;
+		Mat_ = Mat_p;
+		Strk_ = Strk_p;
+		StrkCcy_ = StrkCcy_p;
+		Mult_ = Mult_p;
 	  
-  }
-} 
+  	}
+};

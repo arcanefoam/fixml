@@ -1,20 +1,18 @@
-package text2.xml;
+#include <iostream> 
+ #include "Sndr.cpp" 
+ #include "Tgt.cpp" 
+ #include "OnBhlfOf.cpp" 
+ #include "DlvrTo.cpp" 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
-#include "Sndr.h" 
-#include "Tgt.h" 
-#include "OnBhlfOf.h" 
-#include "DlvrTo.h" 
+using namespace std;
 
-public class Hdr {
+class Hdr {
 
 	private:
-  	String Snt;
-  	String PosDup;
-  	String PosRsnd;
-  	String SeqNum;
+  	string Snt_;
+  	string PosDup_;
+  	string PosRsnd_;
+  	string SeqNum_;
 	Sndr* Sndr_1;
 	Tgt* Tgt_1;
 	OnBhlfOf* OnBhlfOf_1;
@@ -23,33 +21,29 @@ public class Hdr {
  	public: 
 
   	// default constructor
-	public Hdr () {
-		Snt = "2001-12-17T09:30:47-05:00";
-		PosDup = "N";
-		PosRsnd = "N";
-		SeqNum = "1002";
-		
-			Sndr_obj = new Sndr();
-		
-			Tgt_obj = new Tgt();
-		
-			OnBhlfOf_obj = new OnBhlfOf();
-		
-			DlvrTo_obj = new DlvrTo();
+	Hdr () {
+		Snt_ = "2001-12-17T09:30:47-05:00";
+		PosDup_ = "N";
+		PosRsnd_ = "N";
+		SeqNum_ = "1002";
+		Sndr_1 = new Sndr();
+		Tgt_1 = new Tgt();
+		OnBhlfOf_1 = new OnBhlfOf();
+		DlvrTo_1 = new DlvrTo();
   	
   	}
   
   	// by parameters
-  	public Hdr (		String Snt_, String PosDup_, String PosRsnd_, String SeqNum_, Sndr* Sndr_1, Tgt* Tgt_1, OnBhlfOf* OnBhlfOf_1, DlvrTo* DlvrTo_1){
+  	Hdr (		string Snt_p, string PosDup_p, string PosRsnd_p, string SeqNum_p, Sndr* Sndr_1, Tgt* Tgt_1, OnBhlfOf* OnBhlfOf_1, DlvrTo* DlvrTo_1){
 	  
-		Snt = Snt_;
-		PosDup = PosDup_;
-		PosRsnd = PosRsnd_;
-		SeqNum = SeqNum_;
+		Snt_ = Snt_p;
+		PosDup_ = PosDup_p;
+		PosRsnd_ = PosRsnd_p;
+		SeqNum_ = SeqNum_p;
 	  
-		this.Sndr_1 = Sndr_1;
-		this.Tgt_1 = Tgt_1;
-		this.OnBhlfOf_1 = OnBhlfOf_1;
-		this.DlvrTo_1 = DlvrTo_1;
-  }
-} 
+		this->Sndr_1 = Sndr_1;
+		this->Tgt_1 = Tgt_1;
+		this->OnBhlfOf_1 = OnBhlfOf_1;
+		this->DlvrTo_1 = DlvrTo_1;
+  	}
+};

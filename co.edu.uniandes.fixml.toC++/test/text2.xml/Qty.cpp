@@ -1,32 +1,30 @@
-package text2.xml;
+#include <iostream> 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+using namespace std;
 
-public class Qty {
+class Qty {
 
 	private:
-  	String Typ;
-  	String Long;
-  	String Short;
+  	string Typ_;
+  	string Long_;
+  	string Short_;
  	
  	public: 
 
   	// default constructor
-	public Qty () {
-		Typ = "SOD";
-		Long = "35";
-		Short = "0";
+	Qty () {
+		Typ_ = "SOD";
+		Long_ = "35";
+		Short_ = "0";
   	
   	}
   
   	// by parameters
-  	public Qty (		String Typ_, String Long_, String Short_){
+  	Qty (		string Typ_p, string Long_p, string Short_p){
 	  
-		Typ = Typ_;
-		Long = Long_;
-		Short = Short_;
+		Typ_ = Typ_p;
+		Long_ = Long_p;
+		Short_ = Short_p;
 	  
-  }
-} 
+  	}
+};

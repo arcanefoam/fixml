@@ -1,29 +1,27 @@
-package text2.xml;
+#include <iostream> 
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+using namespace std;
 
-public class Amt {
+class Amt {
 
 	private:
-  	String Typ;
-  	String Amt;
+  	string Typ_;
+  	string Amt_;
  	
  	public: 
 
   	// default constructor
-	public Amt () {
-		Typ = "FMTM";
-		Amt = "0.00";
+	Amt () {
+		Typ_ = "FMTM";
+		Amt_ = "0.00";
   	
   	}
   
   	// by parameters
-  	public Amt (		String Typ_, String Amt_){
+  	Amt (		string Typ_p, string Amt_p){
 	  
-		Typ = Typ_;
-		Amt = Amt_;
+		Typ_ = Typ_p;
+		Amt_ = Amt_p;
 	  
-  }
-} 
+  	}
+};
