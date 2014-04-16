@@ -1,0 +1,47 @@
+rule NodeToModel
+    transform node:fixml!XMLNode
+    to m:object!Model {
+        
+        guard : not node.parent.isDefined()
+        
+        m.name = object.getName();
+    }
+
+rule NodeToObject
+    transform node:fixml!XMLNode
+    to objs:Set {
+        
+        var c = object!Clazz.all().selectOne(c | c.name == node.tag);
+        if (c == null) {
+            c = new object!Clazz;    
+            c.name = node.tag;
+            c.attributes.addAll(node.attributes.equivalents().flatten().select(a:object!Attribute|true));
+            c.clazzes.addAll(node.subnodes.equivalents().flatten().select(a:object!Clazz|true));
+        }
+        objs.add(c);
+        var i = new object!Instance;
+        i.name = node.tag;
+        i.clazz = c;
+        i.values.addAll(node.attributes.equivalents().flatten().select(a:object!AttributeValue|true));
+        i.children.addAll(node.subnodes.equivalents().flatten().select(a:object!Instance|true));
+        objs.add(i);
+    }
+
+rule AttributeToObject
+    transform att:fixml!XMLAttribute
+    to objs :Set {
+        var a = object!Attribute.all().selectOne(a | a.name == att.name);
+        if (a == null) {
+            a = new object!Attribute;    
+            a.name = att.name;
+        }
+        objs.add(a);
+        var v = new object!AttributeValue;
+        v.text = att.value;
+        v.attribute = a;
+        objs.add(v);
+    }
+    
+post {
+    "Done".println();
+}

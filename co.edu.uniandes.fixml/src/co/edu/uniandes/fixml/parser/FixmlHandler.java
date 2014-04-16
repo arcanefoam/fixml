@@ -42,6 +42,25 @@ public class FixmlHandler extends DefaultHandler {
 	/** The parent node. */
 	private XMLNode parentNode;
 	
+		
+	/**
+	 * Gets the resource.
+	 *
+	 * @return the resource
+	 */
+	public Resource getResource() {
+		return resource;
+	}
+
+	/**
+	 * Sets the resource.
+	 *
+	 * @param resource the new resource
+	 */
+	public void setResource(Resource resource) {
+		this.resource = resource;
+	}
+
 	/**
 	 * The Class FixmlErrorHandler.
 	 */

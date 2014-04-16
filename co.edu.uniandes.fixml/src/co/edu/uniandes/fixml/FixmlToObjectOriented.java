@@ -1,5 +1,6 @@
 package co.edu.uniandes.fixml;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 
@@ -61,7 +62,8 @@ public class FixmlToObjectOriented {
 	    spf.setNamespaceAware(true);
 	    SAXParser saxParser = spf.newSAXParser();
 	    XMLReader xmlReader = saxParser.getXMLReader();
-	    xmlReader.setContentHandler(new FixmlHandler(modelName, modelPath));
+	    FixmlHandler handler = new FixmlHandler(modelName, modelPath);
+	    xmlReader.setContentHandler(handler);
 	    xmlReader.setErrorHandler(new FixmlHandler.FixmlErrorHandler(System.err));
 	    try {
 	    	xmlReader.parse(convertToFileURL(filename));
@@ -71,8 +73,6 @@ public class FixmlToObjectOriented {
 	    } catch (SAXException saxex) {
 	    	System.err.println(saxex.getMessage() + " The respective classes where not created.");
 	    }
-	    
-	    
 	}
 	
 	/**
