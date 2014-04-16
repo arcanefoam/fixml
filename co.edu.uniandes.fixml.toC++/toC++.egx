@@ -1,0 +1,6 @@
+rule clazz2Cplus
+	transform clazz : Clazz {
+	
+	template	: "toC++.egl"
+	target		: "test/" + Model.allInstances.first().name + "/" + clazz.name + ".cpp" 	
+} 
