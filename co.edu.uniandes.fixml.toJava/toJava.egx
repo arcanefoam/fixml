@@ -2,6 +2,6 @@ rule clazz2Java
 	transform clazz : Clazz {
 	
 	template	: "toJava.egl"
-	target		: "test/" + Model.allInstances.first().name + "/" + clazz.name + ".java" 
+	target		: "test/" + objectModel.getAliases().first + "/" + clazz.name + ".java" 
 	
 } 

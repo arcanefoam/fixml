@@ -1,6 +1,6 @@
 [%
   import 'toJavaUtils.egl';
-%]package [%= Model.allInstances.first().name %];
+%]package [%= objectModel.getAliases().first %];
 
 [% if( clazz.clazzes.size > 0 ) { %]
 import java.util.List;
