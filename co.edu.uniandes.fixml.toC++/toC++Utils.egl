@@ -48,7 +48,7 @@ operation Clazz initialization2( prefix : String  ) {
 		
 			parametersName = parametersName + "\n\n\t\t" + self.name + self.name + "_" + cont + "= new" + self.name + "(";
 
-			parametersName = parametersName + self.attributes.collect( att | '"' + valueFor(instance,att) + '"').concat(',');
+			parametersName = parametersName + self.attributes.collect( att | valueFor2(instance,att)).concat(',');
 					
 			for (subClazz in self.clazzes ) {
 				parametersName = parametersName + subClazz.initialization2SubClazz(subClazz);
@@ -78,6 +78,16 @@ operation Clazz initialization2SubClazz( subClazz : Clazz  ) : String {
 	return parametersName;
 } 	
 
-	
+operation valueFor2( instance : Instance, attribute : Attribute ) : String {
+	for ( value in instance.values ) {
+		if ( value.attribute == attribute) {
+			if(value.text == null)
+		   		return value.text;
+		   	else
+		   		return "\"" + value.text + "\""; 
+		}
+	}
+	return "null";
+}
 
 %]
