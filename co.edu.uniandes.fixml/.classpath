@@ -24,7 +24,8 @@
 			<attribute name="plugin_id" value="org.eclipse.emf.ecore"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/Kepler Modeling/plugins/org.eclipse.emf.ecore.xmi_2.9.1.v20131212-0545.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Kepler Modeling/plugins/org.eclipse.emf.ecore.xmi_2.9.1.v20131212-0545.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.epsilon.standalonePro"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

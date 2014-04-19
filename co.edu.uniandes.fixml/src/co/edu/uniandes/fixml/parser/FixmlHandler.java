@@ -7,7 +7,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.xml.sax.Attributes;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
@@ -41,26 +40,10 @@ public class FixmlHandler extends DefaultHandler {
 	
 	/** The parent node. */
 	private XMLNode parentNode;
-	
+
+	/** The EMF resource set. */
+	private ResourceSet rs;
 		
-	/**
-	 * Gets the resource.
-	 *
-	 * @return the resource
-	 */
-	public Resource getResource() {
-		return resource;
-	}
-
-	/**
-	 * Sets the resource.
-	 *
-	 * @param resource the new resource
-	 */
-	public void setResource(Resource resource) {
-		this.resource = resource;
-	}
-
 	/**
 	 * The Class FixmlErrorHandler.
 	 */
@@ -122,19 +105,40 @@ public class FixmlHandler extends DefaultHandler {
 	    }
 	}
 	
-	
 	/**
 	 * Instantiates a new fixml handler.
 	 *
 	 * @param modelName the model name
 	 * @param modelPath the model path
 	 */
-	public FixmlHandler(String modelName, String modelPath) {
+	public FixmlHandler(String modelName, String modelPath, ResourceSet rs) {
 		super();
 		this.modelName = modelName;
 		this.modelPath = modelPath;
-		this.simplexmlFactory = new SimplexmlFactoryImpl();  
+		this.rs = rs;
+		this.simplexmlFactory = new SimplexmlFactoryImpl();
 	}
+
+	/**
+	 * Gets the resource.
+	 *
+	 * @return the resource
+	 */
+	public Resource getResource() {
+		return resource;
+	}
+
+	/**
+	 * Sets the resource.
+	 *
+	 * @param resource the new resource
+	 */
+	public void setResource(Resource resource) {
+		this.resource = resource;
+	}
+
+	
+	
 
 	/* (non-Javadoc)
 	 * @see org.xml.sax.helpers.DefaultHandler#startDocument()
@@ -142,12 +146,8 @@ public class FixmlHandler extends DefaultHandler {
 	@Override
 	public void startDocument () throws SAXException {
 		System.out.println("Parsing " + modelName);
-		// Create the EMF Object to populate
-		ResourceSet resourceSet = new ResourceSetImpl(); 
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("fixml", new XMIResourceFactoryImpl());
-		//SimplexmlPackage sxPacakge = SimplexmlPackage.eINSTANCE;
 		URI uri = URI.createFileURI(modelPath + "\\" + modelName + "Data.fixml"); 
-		resource = resourceSet.createResource(uri);
+		resource = rs.createResource(uri);
 		
 	}
 	

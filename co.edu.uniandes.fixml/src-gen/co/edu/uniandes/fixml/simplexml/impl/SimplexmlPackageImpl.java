@@ -81,11 +81,16 @@ public class SimplexmlPackageImpl extends EPackageImpl implements SimplexmlPacka
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		SimplexmlPackageImpl theSimplexmlPackage_1 = (SimplexmlPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SimplexmlPackage.eNS_URI) instanceof SimplexmlPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SimplexmlPackage.eNS_URI) : SimplexmlPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theSimplexmlPackage.createPackageContents();
+		theSimplexmlPackage_1.createPackageContents();
 
 		// Initialize created meta-data
 		theSimplexmlPackage.initializePackageContents();
+		theSimplexmlPackage_1.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSimplexmlPackage.freeze();
@@ -240,6 +245,9 @@ public class SimplexmlPackageImpl extends EPackageImpl implements SimplexmlPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		SimplexmlPackage theSimplexmlPackage_1 = (SimplexmlPackage)EPackage.Registry.INSTANCE.getEPackage(SimplexmlPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -249,17 +257,14 @@ public class SimplexmlPackageImpl extends EPackageImpl implements SimplexmlPacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(xmlNodeEClass, XMLNode.class, "XMLNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getXMLNode_Tag(), ecorePackage.getEString(), "tag", null, 0, 1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getXMLNode_Attributes(), this.getXMLAttribute(), this.getXMLAttribute_XmlNode(), "attributes", null, 0, -1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getXMLNode_Subnodes(), this.getXMLNode(), this.getXMLNode_Parent(), "subnodes", null, 0, -1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getXMLNode_Parent(), this.getXMLNode(), this.getXMLNode_Subnodes(), "parent", null, 0, 1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getXMLNode_Attributes(), theSimplexmlPackage_1.getXMLAttribute(), theSimplexmlPackage_1.getXMLAttribute_XmlNode(), "attributes", null, 0, -1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getXMLNode_Subnodes(), theSimplexmlPackage_1.getXMLNode(), theSimplexmlPackage_1.getXMLNode_Parent(), "subnodes", null, 0, -1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getXMLNode_Parent(), theSimplexmlPackage_1.getXMLNode(), theSimplexmlPackage_1.getXMLNode_Subnodes(), "parent", null, 0, 1, XMLNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(xmlAttributeEClass, XMLAttribute.class, "XMLAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getXMLAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, XMLAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getXMLAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, XMLAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getXMLAttribute_XmlNode(), this.getXMLNode(), this.getXMLNode_Attributes(), "xmlNode", null, 0, 1, XMLAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
+		initEReference(getXMLAttribute_XmlNode(), theSimplexmlPackage_1.getXMLNode(), theSimplexmlPackage_1.getXMLNode_Attributes(), "xmlNode", null, 0, 1, XMLAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //SimplexmlPackageImpl
