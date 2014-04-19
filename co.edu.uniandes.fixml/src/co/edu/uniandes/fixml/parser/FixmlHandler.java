@@ -159,6 +159,8 @@ public class FixmlHandler extends DefaultHandler {
 		
 	}
 	
+	XMLNode currentNode;
+	
 	/* (non-Javadoc)
 	 * @see org.xml.sax.helpers.DefaultHandler#startElement(java.lang.String, java.lang.String, java.lang.String, org.xml.sax.Attributes)
 	 */
@@ -166,7 +168,7 @@ public class FixmlHandler extends DefaultHandler {
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
 		
 		if (!localName.equals(FIXML_TAG)) {
-			XMLNode currentNode = simplexmlFactory.createXMLNode();
+			currentNode = simplexmlFactory.createXMLNode();
 			currentNode.setTag(localName);
 			for (int i=0; i < atts.getLength(); i++) {
 				XMLAttribute sa = simplexmlFactory.createXMLAttribute();
@@ -176,6 +178,7 @@ public class FixmlHandler extends DefaultHandler {
 			}
 			if (parentNode == null) {
 				resource.getContents().add(currentNode);
+				currentNode.setParent(null);
 			} else {
 				currentNode.setParent(parentNode);
 			}
@@ -188,7 +191,12 @@ public class FixmlHandler extends DefaultHandler {
 	 */
 	@Override
 	public void endElement (String namespaceURI, String name, String qName) throws SAXException {
-
+		
+		if ( currentNode != null ) {
+			currentNode = currentNode.getParent();
+		}
+		parentNode = currentNode;
+		
 	}
 
 	/* (non-Javadoc)
@@ -199,7 +207,6 @@ public class FixmlHandler extends DefaultHandler {
 		try {
 			resource.save(null);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.success = true;
