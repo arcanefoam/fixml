@@ -1,0 +1,45 @@
+[%
+  import 'toCSharpUtils.egl';
+  "Starting EGL".println();
+%]
+
+[% if( clazz.clazzes.size > 0 ) { %]using System.Collections.Generic;[% } %]
+
+// Class for tag [%= clazz.name %]
+class [%= clazz.name %] {
+
+[% for (attribute in clazz.attributes ) { %]
+  string _[%= attribute.name  %];
+[% } %]
+
+[% for (subclazz in clazz.clazzes) { %]
+  List<[%= subclazz.name %]> _[%= subclazz.name %]s = new List<[%= subclazz.name %]>();
+[% } %]
+
+  // default constructor
+[*- [% if (Model.allInstances.first().clazzes.first() == clazz) { %] 
+    We can shortcut because we are using EMF-based models           
+if ( clazz.eContainer().isTypeOf( Model ) ) { %][% }
+*]
+[% if ( clazz == Clazz.all().first.clazzes.first ) {%][% } %]
+  public [%= clazz.name %] ( ) {   
+    [% 
+      var firstInstance : Instance = clazz.instances.first; 
+      firstInstance.initialization( '' ); 
+    %] 
+  }
+    
+  public [%= clazz.name %] ( [%= clazz.attributes.collect(a|"string " + a.name).concat(", ") %] ) {
+  [% for (attribute in clazz.attributes ) { %]
+    this._[%= attribute.name  %] = [%= attribute.name  %];
+  [% } %]  
+  }
+  
+[% for (subclazz in clazz.clazzes) { %]
+  public void Add[%= subclazz.name %]( [%= subclazz.name %] child ) {
+    this._[%= subclazz.name %]s.Add( child );
+  }
+  
+[% } %]
+
+} 

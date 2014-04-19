@@ -1,7 +1,0 @@
-rule clazz2CSharp
-	transform clazz : Clazz {
-	
-	template	: "toCSharp.egl"
-	target		: "test/" + objectModel.aliases.first + "/" + clazz.name + ".cs" 
-	
-} 

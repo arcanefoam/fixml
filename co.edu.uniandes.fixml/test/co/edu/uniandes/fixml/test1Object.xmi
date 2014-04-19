@@ -1,2 +1,58 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simpleObject="http://uniandes.edu.co/0.1/SimpleObject">
+  <simpleObject:Model name="object"/>
+  <simpleObject:Clazz name="Order" clazzes="/2 /5 /6">
+    <attributes name="ClOrdID" values="/1/@instances.0/@values.0"/>
+    <attributes name="Side" values="/1/@instances.0/@values.1"/>
+    <attributes name="TransactTm" values="/1/@instances.0/@values.2"/>
+    <attributes name="OrdTyp" values="/1/@instances.0/@values.3"/>
+    <attributes name="Px" values="/1/@instances.0/@values.4"/>
+    <attributes name="Acct" values="/1/@instances.0/@values.5"/>
+    <instances name="Order" children="/2/@instances.0 /5/@instances.0 /6/@instances.0">
+      <values text="123456" attribute="/1/@attributes.0"/>
+      <values text="2" attribute="/1/@attributes.1"/>
+      <values text="2001-09-11T09:30:47-05:00" attribute="/1/@attributes.2"/>
+      <values text="2" attribute="/1/@attributes.3"/>
+      <values text="93.25" attribute="/1/@attributes.4"/>
+      <values text="26522154" attribute="/1/@attributes.5"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Hdr" clazzes="/3 /4">
+    <attributes name="Snt" values="/2/@instances.0/@values.0"/>
+    <attributes name="PosDup" values="/2/@instances.0/@values.1"/>
+    <attributes name="PosRsnd" values="/2/@instances.0/@values.2"/>
+    <attributes name="SeqNum" values="/2/@instances.0/@values.3"/>
+    <instances name="Hdr" children="/3/@instances.0 /4/@instances.0">
+      <values text="2001-09-11T09:30:47-05:00" attribute="/2/@attributes.0"/>
+      <values text="N" attribute="/2/@attributes.1"/>
+      <values text="N" attribute="/2/@attributes.2"/>
+      <values text="521" attribute="/2/@attributes.3"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sndr">
+    <instances name="Sndr">
+      <values text="AFUNDMGR" attribute="/5/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Tgt">
+    <instances name="Tgt">
+      <values text="ABROKER" attribute="/5/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Instrmt">
+    <attributes name="Sym" values="/5/@instances.0/@values.0"/>
+    <attributes name="ID" values="/3/@instances.0/@values.0 /4/@instances.0/@values.0 /5/@instances.0/@values.1"/>
+    <attributes name="IDSrc" values="/5/@instances.0/@values.2"/>
+    <instances name="Instrmt">
+      <values text="IBM" attribute="/5/@attributes.0"/>
+      <values text="459200101" attribute="/5/@attributes.1"/>
+      <values text="1" attribute="/5/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OrdQty">
+    <attributes name="Qty" values="/6/@instances.0/@values.0"/>
+    <instances name="OrdQty">
+      <values text="1000" attribute="/6/@attributes.0"/>
+    </instances>
+  </simpleObject:Clazz>
+</xmi:XMI>

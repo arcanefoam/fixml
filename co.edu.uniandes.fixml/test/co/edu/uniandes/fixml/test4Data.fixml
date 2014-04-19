@@ -9,111 +9,111 @@
         <attributes name="OnBehalfOfFIXTag" value="115"/>
         <attributes name="DeliverToFIXTag" value="128"/>
         <attributes name="DataType" value="char"/>
-        <subnodes tag="SubID">
-          <attributes name="FIXTag" value="50-57-116-129"/>
-          <attributes name="SenderFIXTag" value="50"/>
-          <attributes name="TargetFIXTag" value="57"/>
-          <attributes name="OnBehalfOfFIXTag" value="116"/>
-          <attributes name="DeliverToFIXTag" value="129"/>
+      </subnodes>
+      <subnodes tag="SubID">
+        <attributes name="FIXTag" value="50-57-116-129"/>
+        <attributes name="SenderFIXTag" value="50"/>
+        <attributes name="TargetFIXTag" value="57"/>
+        <attributes name="OnBehalfOfFIXTag" value="116"/>
+        <attributes name="DeliverToFIXTag" value="129"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="Target">
+      <subnodes tag="CompID">
+        <attributes name="FIXTag" value="49-56-115-128"/>
+        <attributes name="SenderFIXTag" value="49"/>
+        <attributes name="TargetFIXTag" value="56"/>
+        <attributes name="OnBehalfOfFIXTag" value="115"/>
+        <attributes name="DeliverToFIXTag" value="128"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+      <subnodes tag="SubID">
+        <attributes name="FIXTag" value="50-57-116-129"/>
+        <attributes name="SenderFIXTag" value="50"/>
+        <attributes name="TargetFIXTag" value="57"/>
+        <attributes name="OnBehalfOfFIXTag" value="116"/>
+        <attributes name="DeliverToFIXTag" value="129"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+    </subnodes>
+    <subnodes tag="SendingTime">
+      <attributes name="FIXTag" value="52"/>
+      <attributes name="DataType" value="time"/>
+    </subnodes>
+  </subnodes>
+  <subnodes tag="ApplicationMessage">
+    <subnodes tag="Order">
+      <attributes name="FIXTag" value="35"/>
+      <attributes name="DataType" value="char"/>
+      <attributes name="Value" value="D"/>
+      <subnodes tag="ClOrdID">
+        <attributes name="FIXTag" value="11"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+      <subnodes tag="HandInst">
+        <attributes name="Value" value="2"/>
+        <attributes name="FIXTag" value="21"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+      <subnodes tag="Instrument">
+        <subnodes tag="Symbol">
+          <attributes name="FIXTag" value="55"/>
           <attributes name="DataType" value="char"/>
-          <subnodes tag="Target">
-            <subnodes tag="CompID">
-              <attributes name="FIXTag" value="49-56-115-128"/>
-              <attributes name="SenderFIXTag" value="49"/>
-              <attributes name="TargetFIXTag" value="56"/>
-              <attributes name="OnBehalfOfFIXTag" value="115"/>
-              <attributes name="DeliverToFIXTag" value="128"/>
-              <attributes name="DataType" value="char"/>
-              <subnodes tag="SubID">
-                <attributes name="FIXTag" value="50-57-116-129"/>
-                <attributes name="SenderFIXTag" value="50"/>
-                <attributes name="TargetFIXTag" value="57"/>
-                <attributes name="OnBehalfOfFIXTag" value="116"/>
-                <attributes name="DeliverToFIXTag" value="129"/>
-                <attributes name="DataType" value="char"/>
-                <subnodes tag="SendingTime">
-                  <attributes name="FIXTag" value="52"/>
-                  <attributes name="DataType" value="time"/>
-                  <subnodes tag="ApplicationMessage">
-                    <subnodes tag="Order">
-                      <attributes name="FIXTag" value="35"/>
-                      <attributes name="DataType" value="char"/>
-                      <attributes name="Value" value="D"/>
-                      <subnodes tag="ClOrdID">
-                        <attributes name="FIXTag" value="11"/>
-                        <attributes name="DataType" value="char"/>
-                        <subnodes tag="HandInst">
-                          <attributes name="Value" value="2"/>
-                          <attributes name="FIXTag" value="21"/>
-                          <attributes name="DataType" value="char"/>
-                          <subnodes tag="Instrument">
-                            <subnodes tag="Symbol">
-                              <attributes name="FIXTag" value="55"/>
-                              <attributes name="DataType" value="char"/>
-                              <subnodes tag="SecurityType">
-                                <subnodes tag="Equity">
-                                  <attributes name="Value" value="CS"/>
-                                  <attributes name="FIXTag" value="167"/>
-                                  <attributes name="DataType" value="char"/>
-                                  <subnodes tag="Side">
-                                    <attributes name="Value" value="1"/>
-                                    <attributes name="FIXTag" value="54"/>
-                                    <attributes name="DataType" value="char"/>
-                                    <subnodes tag="TransactTime">
-                                      <attributes name="FIXTag" value="60"/>
-                                      <attributes name="DataType" value="time"/>
-                                      <subnodes tag="OrderQuantity">
-                                        <subnodes tag="OrderQty">
-                                          <attributes name="FIXTag" value="38"/>
-                                          <attributes name="DataType" value="int"/>
-                                          <attributes name="Min" value="0"/>
-                                          <attributes name="Max" value="1000000000"/>
-                                          <subnodes tag="OrderType">
-                                            <subnodes tag="LimitOrder">
-                                              <attributes name="FIXTag" value="40"/>
-                                              <attributes name="DataType" value="char"/>
-                                              <subnodes tag="Price">
-                                                <attributes name="FIXTag" value="44"/>
-                                                <attributes name="DataType" value="float"/>
-                                                <attributes name="Min" value="0"/>
-                                                <attributes name="Max" value="99999999.9999"/>
-                                                <subnodes tag="Currency">
-                                                  <attributes name="Value" value="USD"/>
-                                                  <attributes name="FIXTag" value="15"/>
-                                                  <attributes name="DataType" value="char"/>
-                                                  <subnodes tag="OrderDuration">
-                                                    <subnodes tag="TimeInForce">
-                                                      <attributes name="Value" value="0"/>
-                                                      <attributes name="FIXTag" value="59"/>
-                                                      <attributes name="DataType" value="char"/>
-                                                      <subnodes tag="Rule80A">
-                                                        <attributes name="Value" value="A"/>
-                                                        <attributes name="FIXTag" value="47"/>
-                                                        <attributes name="DataType" value="char"/>
-                                                      </subnodes>
-                                                    </subnodes>
-                                                  </subnodes>
-                                                </subnodes>
-                                              </subnodes>
-                                            </subnodes>
-                                          </subnodes>
-                                        </subnodes>
-                                      </subnodes>
-                                    </subnodes>
-                                  </subnodes>
-                                </subnodes>
-                              </subnodes>
-                            </subnodes>
-                          </subnodes>
-                        </subnodes>
-                      </subnodes>
-                    </subnodes>
-                  </subnodes>
-                </subnodes>
-              </subnodes>
-            </subnodes>
+        </subnodes>
+        <subnodes tag="SecurityType">
+          <subnodes tag="Equity">
+            <attributes name="Value" value="CS"/>
+            <attributes name="FIXTag" value="167"/>
+            <attributes name="DataType" value="char"/>
           </subnodes>
         </subnodes>
+      </subnodes>
+      <subnodes tag="Side">
+        <attributes name="Value" value="1"/>
+        <attributes name="FIXTag" value="54"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+      <subnodes tag="TransactTime">
+        <attributes name="FIXTag" value="60"/>
+        <attributes name="DataType" value="time"/>
+      </subnodes>
+      <subnodes tag="OrderQuantity">
+        <subnodes tag="OrderQty">
+          <attributes name="FIXTag" value="38"/>
+          <attributes name="DataType" value="int"/>
+          <attributes name="Min" value="0"/>
+          <attributes name="Max" value="1000000000"/>
+        </subnodes>
+      </subnodes>
+      <subnodes tag="OrderType">
+        <subnodes tag="LimitOrder">
+          <attributes name="FIXTag" value="40"/>
+          <attributes name="DataType" value="char"/>
+          <subnodes tag="Price">
+            <attributes name="FIXTag" value="44"/>
+            <attributes name="DataType" value="float"/>
+            <attributes name="Min" value="0"/>
+            <attributes name="Max" value="99999999.9999"/>
+          </subnodes>
+        </subnodes>
+      </subnodes>
+      <subnodes tag="Currency">
+        <attributes name="Value" value="USD"/>
+        <attributes name="FIXTag" value="15"/>
+        <attributes name="DataType" value="char"/>
+      </subnodes>
+      <subnodes tag="OrderDuration">
+        <subnodes tag="TimeInForce">
+          <attributes name="Value" value="0"/>
+          <attributes name="FIXTag" value="59"/>
+          <attributes name="DataType" value="char"/>
+        </subnodes>
+      </subnodes>
+      <subnodes tag="Rule80A">
+        <attributes name="Value" value="A"/>
+        <attributes name="FIXTag" value="47"/>
+        <attributes name="DataType" value="char"/>
       </subnodes>
     </subnodes>
   </subnodes>

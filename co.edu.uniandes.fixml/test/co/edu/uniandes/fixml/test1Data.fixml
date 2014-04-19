@@ -13,17 +13,17 @@
     <attributes name="SeqNum" value="521"/>
     <subnodes tag="Sndr">
       <attributes name="ID" value="AFUNDMGR"/>
-      <subnodes tag="Tgt">
-        <attributes name="ID" value="ABROKER"/>
-        <subnodes tag="Instrmt">
-          <attributes name="Sym" value="IBM"/>
-          <attributes name="ID" value="459200101"/>
-          <attributes name="IDSrc" value="1"/>
-          <subnodes tag="OrdQty">
-            <attributes name="Qty" value="1000"/>
-          </subnodes>
-        </subnodes>
-      </subnodes>
     </subnodes>
+    <subnodes tag="Tgt">
+      <attributes name="ID" value="ABROKER"/>
+    </subnodes>
+  </subnodes>
+  <subnodes tag="Instrmt">
+    <attributes name="Sym" value="IBM"/>
+    <attributes name="ID" value="459200101"/>
+    <attributes name="IDSrc" value="1"/>
+  </subnodes>
+  <subnodes tag="OrdQty">
+    <attributes name="Qty" value="1000"/>
   </subnodes>
 </simplexml:XMLNode>
