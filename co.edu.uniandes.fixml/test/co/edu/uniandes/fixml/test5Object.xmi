@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simpleObject="http://uniandes.edu.co/0.1/SimpleObject">
+  <simpleObject:Model name="object"/>
+  <simpleObject:Clazz name="PosRpt" clazzes="/2">
+    <attributes name="RptID" values="/1/@instances.0/@values.0"/>
+    <attributes name="Rslt" values="/1/@instances.0/@values.1"/>
+    <attributes name="BizDt" values="/1/@instances.0/@values.2"/>
+    <attributes name="Acct" values="/1/@instances.0/@values.3"/>
+    <attributes name="AcctTyp" values="/1/@instances.0/@values.4"/>
+    <attributes name="SetPx" values="/1/@instances.0/@values.5"/>
+    <attributes name="SetPxTyp" values="/1/@instances.0/@values.6"/>
+    <attributes name="PriSetPx" values="/1/@instances.0/@values.7"/>
+    <attributes name="ReqTyp" values="/1/@instances.0/@values.8"/>
+    <attributes name="Ccy" values="/1/@instances.0/@values.9"/>
+    <instances name="PosRpt" children="/2/@instances.0">
+      <values text="541386431" attribute="/1/@attributes.0"/>
+      <values text="0" attribute="/1/@attributes.1"/>
+      <values text="2003-09-10T00:00:00" attribute="/1/@attributes.2"/>
+      <values text="1" attribute="/1/@attributes.3"/>
+      <values text="1" attribute="/1/@attributes.4"/>
+      <values text="0.00" attribute="/1/@attributes.5"/>
+      <values text="1" attribute="/1/@attributes.6"/>
+      <values text="0.00" attribute="/1/@attributes.7"/>
+      <values text="0" attribute="/1/@attributes.8"/>
+      <values text="USD" attribute="/1/@attributes.9"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Hdr" clazzes="/3">
+    <attributes name="Snt" values="/2/@instances.0/@values.0"/>
+    <attributes name="PosDup" values="/2/@instances.0/@values.1"/>
+    <attributes name="PosRsnd" values="/2/@instances.0/@values.2"/>
+    <attributes name="SeqNum" values="/2/@instances.0/@values.3"/>
+    <instances name="Hdr" children="/3/@instances.0">
+      <values text="2001-12-17T09:30:47-05:00" attribute="/2/@attributes.0"/>
+      <values text="N" attribute="/2/@attributes.1"/>
+      <values text="N" attribute="/2/@attributes.2"/>
+      <values text="1002" attribute="/2/@attributes.3"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sndr" clazzes="/4">
+    <instances name="Sndr" children="/4/@instances.0">
+      <values text="String" attribute="/11/@attributes.1"/>
+      <values text="String" attribute="/6/@attributes.0"/>
+      <values text="String" attribute="/6/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Tgt" clazzes="/5">
+    <instances name="Tgt" children="/5/@instances.0">
+      <values text="String" attribute="/11/@attributes.1"/>
+      <values text="String" attribute="/6/@attributes.0"/>
+      <values text="String" attribute="/6/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OnBhlfOf" clazzes="/6">
+    <instances name="OnBhlfOf" children="/6/@instances.0">
+      <values text="String" attribute="/11/@attributes.1"/>
+      <values text="String" attribute="/6/@attributes.0"/>
+      <values text="String" attribute="/6/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="DlvrTo" clazzes="/7">
+    <attributes name="Sub" values="/3/@instances.0/@values.1 /4/@instances.0/@values.1 /5/@instances.0/@values.1 /6/@instances.0/@values.1"/>
+    <attributes name="Loc" values="/3/@instances.0/@values.2 /4/@instances.0/@values.2 /5/@instances.0/@values.2 /6/@instances.0/@values.2"/>
+    <instances name="DlvrTo" children="/7/@instances.62">
+      <values text="String" attribute="/11/@attributes.1"/>
+      <values text="String" attribute="/6/@attributes.0"/>
+      <values text="String" attribute="/6/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Pty" clazzes="/8 /7">
+    <attributes name="R" values="/7/@instances.62/@values.1 /7/@instances.61/@values.1 /7/@instances.60/@values.1 /7/@instances.59/@values.1 /7/@instances.58/@values.1 /7/@instances.57/@values.1 /7/@instances.56/@values.1 /7/@instances.55/@values.1 /7/@instances.54/@values.1 /7/@instances.53/@values.1 /7/@instances.52/@values.1 /7/@instances.51/@values.1 /7/@instances.50/@values.1 /7/@instances.49/@values.1 /7/@instances.48/@values.1 /7/@instances.47/@values.1 /7/@instances.46/@values.1 /7/@instances.45/@values.1 /7/@instances.44/@values.1 /7/@instances.43/@values.1 /7/@instances.42/@values.1 /7/@instances.41/@values.1 /7/@instances.40/@values.1 /7/@instances.39/@values.1 /7/@instances.38/@values.1 /7/@instances.37/@values.1 /7/@instances.36/@values.1 /7/@instances.35/@values.1 /7/@instances.34/@values.1 /7/@instances.33/@values.1 /7/@instances.32/@values.1 /7/@instances.31/@values.1 /7/@instances.30/@values.1 /7/@instances.29/@values.1 /7/@instances.28/@values.1 /7/@instances.27/@values.1 /7/@instances.26/@values.1 /7/@instances.25/@values.1 /7/@instances.24/@values.1 /7/@instances.23/@values.1 /7/@instances.22/@values.1 /7/@instances.21/@values.1 /7/@instances.20/@values.1 /7/@instances.19/@values.1 /7/@instances.18/@values.1 /7/@instances.17/@values.1 /7/@instances.16/@values.1 /7/@instances.15/@values.1 /7/@instances.14/@values.1 /7/@instances.13/@values.1 /7/@instances.12/@values.1 /7/@instances.11/@values.1 /7/@instances.10/@values.1 /7/@instances.9/@values.1 /7/@instances.8/@values.1 /7/@instances.7/@values.1 /7/@instances.6/@values.1 /7/@instances.5/@values.1 /7/@instances.4/@values.1 /7/@instances.3/@values.1 /7/@instances.2/@values.1 /7/@instances.1/@values.1 /7/@instances.0/@values.1"/>
+    <instances name="Pty" children="/8/@instances.0">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.0">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.1">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.1">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.3">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.4">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.2">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.6">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.7">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.3">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.9">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.10">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.4">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.12">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.13">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.5">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.15">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.16">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.6">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.18">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.19">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.7">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.21">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.22">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.8">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.24">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.25">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.9">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.27">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.28">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.10">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.30">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.31">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.11">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.33">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.34">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.12">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.36">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.37">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.13">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.39">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.40">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.14">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.42">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.43">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.15">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.45">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.46">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.16">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.48">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.49">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.17">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.51">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.52">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.18">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.54">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.55">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.19">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.57">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.58">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/8/@instances.20">
+      <values text="C" attribute="/11/@attributes.1"/>
+      <values text="38" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.60">
+      <values text="99999" attribute="/11/@attributes.1"/>
+      <values text="4" attribute="/7/@attributes.0"/>
+    </instances>
+    <instances name="Pty" children="/7/@instances.61">
+      <values text="OCC" attribute="/11/@attributes.1"/>
+      <values text="21" attribute="/7/@attributes.0"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sub" clazzes="/9">
+    <instances name="Sub" children="/9/@instances.2">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.5">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.8">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.11">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.14">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.17">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.20">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.23">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.26">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.29">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.32">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.35">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.38">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.41">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.44">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.47">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.50">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.53">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.56">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.59">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+    <instances name="Sub" children="/9/@instances.62">
+      <values text="ZZZ" attribute="/11/@attributes.1"/>
+      <values text="2" attribute="/10/@attributes.0"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Qty" clazzes="/10 /9 /7">
+    <attributes name="Long" values="/9/@instances.62/@values.1 /9/@instances.61/@values.1 /9/@instances.60/@values.1 /9/@instances.59/@values.1 /9/@instances.58/@values.1 /9/@instances.57/@values.1 /9/@instances.56/@values.1 /9/@instances.55/@values.1 /9/@instances.54/@values.1 /9/@instances.53/@values.1 /9/@instances.52/@values.1 /9/@instances.51/@values.1 /9/@instances.50/@values.1 /9/@instances.49/@values.1 /9/@instances.48/@values.1 /9/@instances.47/@values.1 /9/@instances.46/@values.1 /9/@instances.45/@values.1 /9/@instances.44/@values.1 /9/@instances.43/@values.1 /9/@instances.42/@values.1 /9/@instances.41/@values.1 /9/@instances.40/@values.1 /9/@instances.39/@values.1 /9/@instances.38/@values.1 /9/@instances.37/@values.1 /9/@instances.36/@values.1 /9/@instances.35/@values.1 /9/@instances.34/@values.1 /9/@instances.33/@values.1 /9/@instances.32/@values.1 /9/@instances.31/@values.1 /9/@instances.30/@values.1 /9/@instances.29/@values.1 /9/@instances.28/@values.1 /9/@instances.27/@values.1 /9/@instances.26/@values.1 /9/@instances.25/@values.1 /9/@instances.24/@values.1 /9/@instances.23/@values.1 /9/@instances.22/@values.1 /9/@instances.21/@values.1 /9/@instances.20/@values.1 /9/@instances.19/@values.1 /9/@instances.18/@values.1 /9/@instances.17/@values.1 /9/@instances.16/@values.1 /9/@instances.15/@values.1 /9/@instances.14/@values.1 /9/@instances.13/@values.1 /9/@instances.12/@values.1 /9/@instances.11/@values.1 /9/@instances.10/@values.1 /9/@instances.9/@values.1 /9/@instances.8/@values.1 /9/@instances.7/@values.1 /9/@instances.6/@values.1 /9/@instances.5/@values.1 /9/@instances.4/@values.1 /9/@instances.3/@values.1 /9/@instances.2/@values.1 /9/@instances.1/@values.1 /9/@instances.0/@values.1"/>
+    <attributes name="Short" values="/9/@instances.62/@values.2 /9/@instances.61/@values.2 /9/@instances.59/@values.2 /9/@instances.58/@values.2 /9/@instances.56/@values.2 /9/@instances.55/@values.2 /9/@instances.53/@values.2 /9/@instances.52/@values.2 /9/@instances.50/@values.2 /9/@instances.49/@values.2 /9/@instances.47/@values.2 /9/@instances.46/@values.2 /9/@instances.44/@values.2 /9/@instances.43/@values.2 /9/@instances.41/@values.2 /9/@instances.40/@values.2 /9/@instances.38/@values.2 /9/@instances.37/@values.2 /9/@instances.35/@values.2 /9/@instances.34/@values.2 /9/@instances.32/@values.2 /9/@instances.31/@values.2 /9/@instances.29/@values.2 /9/@instances.28/@values.2 /9/@instances.26/@values.2 /9/@instances.25/@values.2 /9/@instances.23/@values.2 /9/@instances.22/@values.2 /9/@instances.20/@values.2 /9/@instances.19/@values.2 /9/@instances.17/@values.2 /9/@instances.16/@values.2 /9/@instances.14/@values.2 /9/@instances.13/@values.2 /9/@instances.11/@values.2 /9/@instances.10/@values.2 /9/@instances.8/@values.2 /9/@instances.7/@values.2 /9/@instances.5/@values.2 /9/@instances.4/@values.2 /9/@instances.2/@values.2 /9/@instances.1/@values.2"/>
+    <instances name="Qty" children="/10/@instances.0">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.0">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.1">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.2">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.3">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.4">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.5">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.6">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.7">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.8">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.9">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.10">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.11">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.12">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.13">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.14">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.15">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.16">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.17">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.18">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.19">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.20">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.21">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.22">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.23">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.24">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.25">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.26">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.27">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.28">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.29">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.30">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.31">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.32">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.33">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.34">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.35">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.36">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.37">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.38">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.39">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.40">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.41">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.42">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.43">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.44">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.45">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.46">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.47">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.48">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.49">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.50">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.51">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.52">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.53">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.54">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.55">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.56">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.57">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.58">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/7/@instances.59">
+      <values text="IAS" attribute="/10/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.0"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.60">
+      <values text="FIN" attribute="/10/@attributes.0"/>
+      <values text="20" attribute="/9/@attributes.0"/>
+      <values text="10" attribute="/9/@attributes.1"/>
+    </instances>
+    <instances name="Qty" children="/9/@instances.61">
+      <values text="SOD" attribute="/10/@attributes.0"/>
+      <values text="35" attribute="/9/@attributes.0"/>
+      <values text="0" attribute="/9/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Amt" clazzes="/11">
+    <attributes name="Typ" values="/8/@instances.20/@values.1 /9/@instances.62/@values.0 /9/@instances.61/@values.0 /9/@instances.60/@values.0 /8/@instances.19/@values.1 /9/@instances.59/@values.0 /9/@instances.58/@values.0 /9/@instances.57/@values.0 /8/@instances.18/@values.1 /9/@instances.56/@values.0 /9/@instances.55/@values.0 /9/@instances.54/@values.0 /8/@instances.17/@values.1 /9/@instances.53/@values.0 /9/@instances.52/@values.0 /9/@instances.51/@values.0 /8/@instances.16/@values.1 /9/@instances.50/@values.0 /9/@instances.49/@values.0 /9/@instances.48/@values.0 /8/@instances.15/@values.1 /9/@instances.47/@values.0 /9/@instances.46/@values.0 /9/@instances.45/@values.0 /8/@instances.14/@values.1 /9/@instances.44/@values.0 /9/@instances.43/@values.0 /9/@instances.42/@values.0 /8/@instances.13/@values.1 /9/@instances.41/@values.0 /9/@instances.40/@values.0 /9/@instances.39/@values.0 /8/@instances.12/@values.1 /9/@instances.38/@values.0 /9/@instances.37/@values.0 /9/@instances.36/@values.0 /8/@instances.11/@values.1 /9/@instances.35/@values.0 /9/@instances.34/@values.0 /9/@instances.33/@values.0 /8/@instances.10/@values.1 /9/@instances.32/@values.0 /9/@instances.31/@values.0 /9/@instances.30/@values.0 /8/@instances.9/@values.1 /9/@instances.29/@values.0 /9/@instances.28/@values.0 /9/@instances.27/@values.0 /8/@instances.8/@values.1 /9/@instances.26/@values.0 /9/@instances.25/@values.0 /9/@instances.24/@values.0 /8/@instances.7/@values.1 /9/@instances.23/@values.0 /9/@instances.22/@values.0 /9/@instances.21/@values.0 /8/@instances.6/@values.1 /9/@instances.20/@values.0 /9/@instances.19/@values.0 /9/@instances.18/@values.0 /8/@instances.5/@values.1 /9/@instances.17/@values.0 /9/@instances.16/@values.0 /9/@instances.15/@values.0 /8/@instances.4/@values.1 /9/@instances.14/@values.0 /9/@instances.13/@values.0 /9/@instances.12/@values.0 /8/@instances.3/@values.1 /9/@instances.11/@values.0 /9/@instances.10/@values.0 /9/@instances.9/@values.0 /8/@instances.2/@values.1 /9/@instances.8/@values.0 /9/@instances.7/@values.0 /9/@instances.6/@values.0 /8/@instances.1/@values.1 /9/@instances.5/@values.0 /9/@instances.4/@values.0 /9/@instances.3/@values.0 /8/@instances.0/@values.1 /9/@instances.2/@values.0 /9/@instances.1/@values.0 /9/@instances.0/@values.0 /10/@instances.0/@values.0"/>
+    <attributes name="Amt" values="/10/@instances.0/@values.1"/>
+    <instances name="Amt" children="/11/@instances.0">
+      <values text="FMTM" attribute="/10/@attributes.0"/>
+      <values text="0.00" attribute="/10/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Instrmt">
+    <attributes name="Sym" values="/11/@instances.0/@values.0"/>
+    <attributes name="ID" values="/3/@instances.0/@values.0 /4/@instances.0/@values.0 /5/@instances.0/@values.0 /6/@instances.0/@values.0 /7/@instances.62/@values.0 /7/@instances.61/@values.0 /7/@instances.60/@values.0 /8/@instances.20/@values.0 /7/@instances.59/@values.0 /7/@instances.58/@values.0 /7/@instances.57/@values.0 /8/@instances.19/@values.0 /7/@instances.56/@values.0 /7/@instances.55/@values.0 /7/@instances.54/@values.0 /8/@instances.18/@values.0 /7/@instances.53/@values.0 /7/@instances.52/@values.0 /7/@instances.51/@values.0 /8/@instances.17/@values.0 /7/@instances.50/@values.0 /7/@instances.49/@values.0 /7/@instances.48/@values.0 /8/@instances.16/@values.0 /7/@instances.47/@values.0 /7/@instances.46/@values.0 /7/@instances.45/@values.0 /8/@instances.15/@values.0 /7/@instances.44/@values.0 /7/@instances.43/@values.0 /7/@instances.42/@values.0 /8/@instances.14/@values.0 /7/@instances.41/@values.0 /7/@instances.40/@values.0 /7/@instances.39/@values.0 /8/@instances.13/@values.0 /7/@instances.38/@values.0 /7/@instances.37/@values.0 /7/@instances.36/@values.0 /8/@instances.12/@values.0 /7/@instances.35/@values.0 /7/@instances.34/@values.0 /7/@instances.33/@values.0 /8/@instances.11/@values.0 /7/@instances.32/@values.0 /7/@instances.31/@values.0 /7/@instances.30/@values.0 /8/@instances.10/@values.0 /7/@instances.29/@values.0 /7/@instances.28/@values.0 /7/@instances.27/@values.0 /8/@instances.9/@values.0 /7/@instances.26/@values.0 /7/@instances.25/@values.0 /7/@instances.24/@values.0 /8/@instances.8/@values.0 /7/@instances.23/@values.0 /7/@instances.22/@values.0 /7/@instances.21/@values.0 /8/@instances.7/@values.0 /7/@instances.20/@values.0 /7/@instances.19/@values.0 /7/@instances.18/@values.0 /8/@instances.6/@values.0 /7/@instances.17/@values.0 /7/@instances.16/@values.0 /7/@instances.15/@values.0 /8/@instances.5/@values.0 /7/@instances.14/@values.0 /7/@instances.13/@values.0 /7/@instances.12/@values.0 /8/@instances.4/@values.0 /7/@instances.11/@values.0 /7/@instances.10/@values.0 /7/@instances.9/@values.0 /8/@instances.3/@values.0 /7/@instances.8/@values.0 /7/@instances.7/@values.0 /7/@instances.6/@values.0 /8/@instances.2/@values.0 /7/@instances.5/@values.0 /7/@instances.4/@values.0 /7/@instances.3/@values.0 /8/@instances.1/@values.0 /7/@instances.2/@values.0 /7/@instances.1/@values.0 /7/@instances.0/@values.0 /8/@instances.0/@values.0 /11/@instances.0/@values.1"/>
+    <attributes name="IDSrc" values="/11/@instances.0/@values.2"/>
+    <attributes name="CFI" values="/11/@instances.0/@values.3"/>
+    <attributes name="MMY" values="/11/@instances.0/@values.4"/>
+    <attributes name="Mat" values="/11/@instances.0/@values.5"/>
+    <attributes name="Strk" values="/11/@instances.0/@values.6"/>
+    <attributes name="StrkCcy" values="/11/@instances.0/@values.7"/>
+    <attributes name="Mult" values="/11/@instances.0/@values.8"/>
+    <instances name="Instrmt">
+      <values text="AOL" attribute="/11/@attributes.0"/>
+      <values text="KW" attribute="/11/@attributes.1"/>
+      <values text="J" attribute="/11/@attributes.2"/>
+      <values text="OCASPS" attribute="/11/@attributes.3"/>
+      <values text="20031122" attribute="/11/@attributes.4"/>
+      <values text="2003-11-22T00:00:00" attribute="/11/@attributes.5"/>
+      <values text="47.50" attribute="/11/@attributes.6"/>
+      <values text="USD" attribute="/11/@attributes.7"/>
+      <values text="100" attribute="/11/@attributes.8"/>
+    </instances>
+  </simpleObject:Clazz>
+</xmi:XMI>

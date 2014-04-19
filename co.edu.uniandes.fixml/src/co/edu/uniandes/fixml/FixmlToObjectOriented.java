@@ -1,35 +1,29 @@
 package co.edu.uniandes.fixml;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.BasicExtendedMetaData;
-import org.eclipse.emf.ecore.util.ExtendedMetaData;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
 import org.eclipse.epsilon.standalone.EtlStanaloneEngine;
-import org.xml.sax.*;
-import org.xml.sax.helpers.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-
-
-
-
-import java.net.URISyntaxException;
-import java.net.URL;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import org.eclipse.epsilon.standalone.util.ExecutionException;
+import org.eclipse.epsilon.standalone.util.ParseException;
+import org.eclipse.epsilon.standalone.util.SourceLoadException;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 
 import co.edu.uniandes.fixml.parser.FixmlHandler;
 import co.edu.uniandes.fixml.simpleObject.SimpleObjectPackage;
@@ -44,6 +38,11 @@ public class FixmlToObjectOriented {
 	
 	private static String OBJECT_MODEL_NAME = "object";
 	
+	private static String filename = null; 	// args[0]
+	private static String modelPath = null;	// args[1]
+	private static String modelName = null;
+	private static String errorMessage = "";
+	
 	/**
 	 * The main method.
 	 *
@@ -52,17 +51,13 @@ public class FixmlToObjectOriented {
 	 */
 	static public void main(String[] args) throws Exception {
 	    
-		String filename = null; 	// args[0]
-		String modelPath = null;	// args[1]
-		String modelName = null;
-		
 		// TODO Test that the filename is a file and modelPath is a folder
 		if (args.length > 1) {
 			filename = args[0];
 			modelPath = args[1];
 		}
 		
-		ResourceSet rs = setupEmf();
+		setupEmf();
 	    
 	    if (filename == null) {
 	        usage();
@@ -85,60 +80,95 @@ public class FixmlToObjectOriented {
 	    		usage();
 	    	}
 	    }
+	    boolean result = parseFixml();
+	    if (result) {
+	    	EmfModel emfFixmlModel = null;
+			try {
+				emfFixmlModel = createFixMLModel();
+			} catch (URISyntaxException uex) {
+				System.err.println("Error creating the FIXML model URI. " + uex.getMessage());
+				System.exit(1);
+			} catch (EolModelLoadingException ex) {
+				System.err.println("Error loading the FIXML model. " + ex.getMessage());
+				System.exit(1);
+			}
+			EmfModel emfObjectModel = null;
+			try {
+				emfObjectModel = createObjectModel();
+			} catch (URISyntaxException uex) {
+				System.err.println("Error creating the Object model URI. " + uex.getMessage());
+				System.exit(1);
+			} catch (EolModelLoadingException eex) {
+				System.err.println("Error loading the Object model. " + eex.getMessage());
+				System.exit(1);
+			}
+			EtlStanaloneEngine etlEngine = new EtlStanaloneEngine(getResourceURI("to/object/FixmlToObject.etl"));
+	    	etlEngine.getModels().add(emfObjectModel);
+	    	etlEngine.getModels().add(emfFixmlModel);
+			try {
+				etlEngine.execute();
+			} catch (ParseException pex) {
+				errorMessage = "Error parsing the Fixml to Object transformation. " + pex.getMessage();
+			} catch (SourceLoadException sex) {
+				errorMessage = "Error loading the Source. " + sex.getMessage();
+			} catch (ExecutionException eex) {
+				errorMessage = "Error executing the Fixml to Object tranformation. " + eex.getMessage();
+			}
+	    } else {
+	    	System.err.println(errorMessage);
+	    }
+    	
+	}
+	
+	private static void setupEmf() {
+		
+		SimplexmlPackage.eINSTANCE.eClass();
+		SimpleObjectPackage.eINSTANCE.eClass();
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("fixml", new XMIResourceFactoryImpl());
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+	}
+	
+	private static boolean parseFixml() throws ParserConfigurationException, SAXException {
+
+		boolean success = false;
     	SAXParserFactory spf = SAXParserFactory.newInstance();
 	    spf.setNamespaceAware(true);
 	    SAXParser saxParser = spf.newSAXParser();
 	    XMLReader xmlReader = saxParser.getXMLReader();
-	    FixmlHandler handler = new FixmlHandler(modelName, modelPath, rs);
+	    FixmlHandler handler = new FixmlHandler(modelName, modelPath);
 	    xmlReader.setContentHandler(handler);
 	    xmlReader.setErrorHandler(new FixmlHandler.FixmlErrorHandler(System.err));
 	    try {
 	    	xmlReader.parse(convertToFileURL(filename));
 	    } catch (FileNotFoundException ex) {
 	    	// Missing DTDs
-	    	System.err.println("The xml file references a missing DTD, " + ex.getMessage());
+	    	errorMessage = "The xml file references a missing DTD, " + ex.getMessage();
 	    } catch (SAXException saxex) {
-	    	System.err.println(saxex.getMessage() + " The respective classes where not created.");
-	    } finally {
-	    	Resource fixmlModel = handler.getResource();
-	    	EmfModel emfFixmlModel = new EmfModel();
-	    	StringProperties properties = new StringProperties();
-		    properties.put(EmfModel.PROPERTY_NAME, "fixml");
-		    properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,
-		            getResourceURI("/co/edu/uniandes/fixml/model/SimpleXML.ecore"));
-		    properties.put(EmfModel.PROPERTY_MODEL_URI, 
-		        getURI(modelPath + "/" + modelName + ".fixml"));
-		    properties.put(EmfModel.PROPERTY_READONLOAD, Boolean.TRUE.toString());
-		    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, Boolean.FALSE.toString());
-		    emfFixmlModel.load(properties, null);
-	    	
-	    	
-	    	//emfFixmlModel.setResource(fixmlModel);
-	    	//emfFixmlModel.setName("fixml");
-	    	//emfFixmlModel.setMetamodelFile(getResourceURI("/co/edu/uniandes/fixml/model/SimpleXML.ecore"));
-
-
-	    	//emfFixmlModel.getResourceSet() .getPackageRegistry().
-	    	EmfModel emfObjectModel = createObjectModel(modelPath, modelName);
-	    	EtlStanaloneEngine etlEngine = new EtlStanaloneEngine(getResourceURI("to/object/FixmlToObject.etl"));
-	    	etlEngine.getModels().add(emfObjectModel);
-	    	etlEngine.getModels().add(emfFixmlModel);
-	    	etlEngine.execute();
+	    	errorMessage = saxex.getMessage() + " The respective classes where not created.";
+	    } catch (IOException e) {
+			errorMessage  = e.getMessage();
+		} finally {
+			success = handler.isSuccess();
 	    }
+	    return success;
 	}
 	
-	private static ResourceSet setupEmf() {
-		
-		SimplexmlPackage.eINSTANCE.eClass();
-		SimpleObjectPackage.eINSTANCE.eClass();
-		
-		ResourceSet rs = new ResourceSetImpl();
-		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("fixml", new XMIResourceFactoryImpl());
-		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		return rs;
+	private static EmfModel createFixMLModel() throws URISyntaxException, EolModelLoadingException {
+		EmfModel emfModel = new EmfModel();
+    	StringProperties properties = new StringProperties();
+	    properties.put(EmfModel.PROPERTY_NAME, "fixml");
+	    properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,
+	            getResourceURI("/co/edu/uniandes/fixml/model/SimpleXML.ecore"));
+	    properties.put(EmfModel.PROPERTY_MODEL_URI, 
+	        getURI(modelPath + "/" + modelName + "Data.fixml"));
+	    properties.put(EmfModel.PROPERTY_READONLOAD, Boolean.TRUE.toString());
+	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, Boolean.FALSE.toString());
+	    emfModel.load(properties, null);
+	    return emfModel;
+    	
 	}
 	
-	private static EmfModel createObjectModel(String modelPath, String modelName) 
+	private static EmfModel createObjectModel() 
 		          throws EolModelLoadingException, URISyntaxException {
 		
 		EmfModel emfModel = new EmfModel();
@@ -148,7 +178,7 @@ public class FixmlToObjectOriented {
 	    properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,
 	            getResourceURI("/co/edu/uniandes/fixml/model/SimpleObject.ecore"));
 	    properties.put(EmfModel.PROPERTY_MODEL_URI, 
-	        getURI(modelPath + "/" + modelName + "Object.xmi"));
+	    		getURI(modelPath + "/" + modelName + "Object.xmi"));
 	    properties.put(EmfModel.PROPERTY_READONLOAD, Boolean.FALSE.toString());
 	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, Boolean.TRUE.toString());
 	    emfModel.load(properties, null);

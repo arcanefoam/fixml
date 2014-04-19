@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:simpleObject="http://uniandes.edu.co/0.1/SimpleObject">
+  <simpleObject:Model name="object"/>
+  <simpleObject:Clazz name="FIXMLMessage" clazzes="/2">
+    <instances name="FIXMLMessage" children="/2/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Header" clazzes="/3">
+    <instances name="Header" children="/3/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Sender" clazzes="/4">
+    <instances name="Sender" children="/4/@instances.1"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="CompID" clazzes="/5">
+    <instances name="CompID" children="/5/@instances.0">
+      <values text="49-56-115-128" attribute="/26/@attributes.1"/>
+      <values text="49" attribute="/5/@attributes.0"/>
+      <values text="56" attribute="/5/@attributes.1"/>
+      <values text="115" attribute="/5/@attributes.2"/>
+      <values text="128" attribute="/5/@attributes.3"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+    <instances name="CompID" children="/5/@instances.1">
+      <values text="49-56-115-128" attribute="/26/@attributes.1"/>
+      <values text="49" attribute="/5/@attributes.0"/>
+      <values text="56" attribute="/5/@attributes.1"/>
+      <values text="115" attribute="/5/@attributes.2"/>
+      <values text="128" attribute="/5/@attributes.3"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="SubID" clazzes="/7 /6">
+    <attributes name="SenderFIXTag" values="/4/@instances.1/@values.1 /5/@instances.1/@values.1 /4/@instances.0/@values.1 /5/@instances.0/@values.1"/>
+    <attributes name="TargetFIXTag" values="/4/@instances.1/@values.2 /5/@instances.1/@values.2 /4/@instances.0/@values.2 /5/@instances.0/@values.2"/>
+    <attributes name="OnBehalfOfFIXTag" values="/4/@instances.1/@values.3 /5/@instances.1/@values.3 /4/@instances.0/@values.3 /5/@instances.0/@values.3"/>
+    <attributes name="DeliverToFIXTag" values="/4/@instances.1/@values.4 /5/@instances.1/@values.4 /4/@instances.0/@values.4 /5/@instances.0/@values.4"/>
+    <instances name="SubID" children="/7/@instances.0">
+      <values text="50-57-116-129" attribute="/26/@attributes.1"/>
+      <values text="50" attribute="/5/@attributes.0"/>
+      <values text="57" attribute="/5/@attributes.1"/>
+      <values text="116" attribute="/5/@attributes.2"/>
+      <values text="129" attribute="/5/@attributes.3"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+    <instances name="SubID" children="/6/@instances.0">
+      <values text="50-57-116-129" attribute="/26/@attributes.1"/>
+      <values text="50" attribute="/5/@attributes.0"/>
+      <values text="57" attribute="/5/@attributes.1"/>
+      <values text="116" attribute="/5/@attributes.2"/>
+      <values text="129" attribute="/5/@attributes.3"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Target" clazzes="/4">
+    <instances name="Target" children="/4/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="SendingTime" clazzes="/8">
+    <instances name="SendingTime" children="/8/@instances.0">
+      <values text="52" attribute="/26/@attributes.1"/>
+      <values text="time" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="ApplicationMessage" clazzes="/9">
+    <instances name="ApplicationMessage" children="/9/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Order" clazzes="/10">
+    <instances name="Order" children="/10/@instances.0">
+      <values text="35" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+      <values text="D" attribute="/26/@attributes.0"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="ClOrdID" clazzes="/11">
+    <instances name="ClOrdID" children="/11/@instances.0">
+      <values text="11" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="HandInst" clazzes="/12">
+    <instances name="HandInst" children="/12/@instances.0">
+      <values text="2" attribute="/26/@attributes.0"/>
+      <values text="21" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Instrument" clazzes="/13">
+    <instances name="Instrument" children="/13/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Symbol" clazzes="/14">
+    <instances name="Symbol" children="/14/@instances.0">
+      <values text="55" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="SecurityType" clazzes="/15">
+    <instances name="SecurityType" children="/15/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Equity" clazzes="/16">
+    <instances name="Equity" children="/16/@instances.0">
+      <values text="CS" attribute="/26/@attributes.0"/>
+      <values text="167" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Side" clazzes="/17">
+    <instances name="Side" children="/17/@instances.0">
+      <values text="1" attribute="/26/@attributes.0"/>
+      <values text="54" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="TransactTime" clazzes="/18">
+    <instances name="TransactTime" children="/18/@instances.0">
+      <values text="60" attribute="/26/@attributes.1"/>
+      <values text="time" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OrderQuantity" clazzes="/19">
+    <instances name="OrderQuantity" children="/19/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OrderQty" clazzes="/20">
+    <instances name="OrderQty" children="/20/@instances.0">
+      <values text="38" attribute="/26/@attributes.1"/>
+      <values text="int" attribute="/26/@attributes.2"/>
+      <values text="0" attribute="/22/@attributes.0"/>
+      <values text="1000000000" attribute="/22/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OrderType" clazzes="/21">
+    <instances name="OrderType" children="/21/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="LimitOrder" clazzes="/22">
+    <instances name="LimitOrder" children="/22/@instances.0">
+      <values text="40" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Price" clazzes="/23">
+    <attributes name="Min" values="/19/@instances.0/@values.2 /22/@instances.0/@values.2"/>
+    <attributes name="Max" values="/19/@instances.0/@values.3 /22/@instances.0/@values.3"/>
+    <instances name="Price" children="/23/@instances.0">
+      <values text="44" attribute="/26/@attributes.1"/>
+      <values text="float" attribute="/26/@attributes.2"/>
+      <values text="0" attribute="/22/@attributes.0"/>
+      <values text="99999999.9999" attribute="/22/@attributes.1"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Currency" clazzes="/24">
+    <instances name="Currency" children="/24/@instances.0">
+      <values text="USD" attribute="/26/@attributes.0"/>
+      <values text="15" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="OrderDuration" clazzes="/25">
+    <instances name="OrderDuration" children="/25/@instances.0"/>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="TimeInForce" clazzes="/26">
+    <instances name="TimeInForce" children="/26/@instances.0">
+      <values text="0" attribute="/26/@attributes.0"/>
+      <values text="59" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+  <simpleObject:Clazz name="Rule80A">
+    <attributes name="Value" values="/9/@instances.0/@values.2 /11/@instances.0/@values.0 /15/@instances.0/@values.0 /16/@instances.0/@values.0 /23/@instances.0/@values.0 /25/@instances.0/@values.0 /26/@instances.0/@values.0"/>
+    <attributes name="FIXTag" values="/4/@instances.1/@values.0 /5/@instances.1/@values.0 /4/@instances.0/@values.0 /5/@instances.0/@values.0 /7/@instances.0/@values.0 /9/@instances.0/@values.0 /10/@instances.0/@values.0 /11/@instances.0/@values.1 /13/@instances.0/@values.0 /15/@instances.0/@values.1 /16/@instances.0/@values.1 /17/@instances.0/@values.0 /19/@instances.0/@values.0 /21/@instances.0/@values.0 /22/@instances.0/@values.0 /23/@instances.0/@values.1 /25/@instances.0/@values.1 /26/@instances.0/@values.1"/>
+    <attributes name="DataType" values="/4/@instances.1/@values.5 /5/@instances.1/@values.5 /4/@instances.0/@values.5 /5/@instances.0/@values.5 /7/@instances.0/@values.1 /9/@instances.0/@values.1 /10/@instances.0/@values.1 /11/@instances.0/@values.2 /13/@instances.0/@values.1 /15/@instances.0/@values.2 /16/@instances.0/@values.2 /17/@instances.0/@values.1 /19/@instances.0/@values.1 /21/@instances.0/@values.1 /22/@instances.0/@values.1 /23/@instances.0/@values.2 /25/@instances.0/@values.2 /26/@instances.0/@values.2"/>
+    <instances name="Rule80A">
+      <values text="A" attribute="/26/@attributes.0"/>
+      <values text="47" attribute="/26/@attributes.1"/>
+      <values text="char" attribute="/26/@attributes.2"/>
+    </instances>
+  </simpleObject:Clazz>
+</xmi:XMI>

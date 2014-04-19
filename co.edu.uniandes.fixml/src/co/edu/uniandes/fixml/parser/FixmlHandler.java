@@ -40,9 +40,10 @@ public class FixmlHandler extends DefaultHandler {
 	
 	/** The parent node. */
 	private XMLNode parentNode;
-
-	/** The EMF resource set. */
-	private ResourceSet rs;
+	
+	
+    /** The success. */
+    private boolean success;
 		
 	/**
 	 * The Class FixmlErrorHandler.
@@ -60,8 +61,8 @@ public class FixmlHandler extends DefaultHandler {
     	public FixmlErrorHandler(PrintStream out) {
 	        this.out = out;
 	    }
-
-	    /**
+    	
+		/**
     	 * Gets the parses the exception info.
     	 *
     	 * @param spe the spe
@@ -76,7 +77,6 @@ public class FixmlHandler extends DefaultHandler {
 
 	        String info = "URI=" + systemId + " Line=" 
 	            + spe.getLineNumber() + ": " + spe.getMessage();
-
 	        return info;
 	    }
 
@@ -111,12 +111,21 @@ public class FixmlHandler extends DefaultHandler {
 	 * @param modelName the model name
 	 * @param modelPath the model path
 	 */
-	public FixmlHandler(String modelName, String modelPath, ResourceSet rs) {
+	public FixmlHandler(String modelName, String modelPath) {
 		super();
 		this.modelName = modelName;
 		this.modelPath = modelPath;
-		this.rs = rs;
 		this.simplexmlFactory = new SimplexmlFactoryImpl();
+		this.success = false;
+	}
+	
+	/**
+	 * Checks if is error.
+	 *
+	 * @return true, if is error
+	 */
+	public boolean isSuccess() {
+		return success;
 	}
 
 	/**
@@ -137,8 +146,6 @@ public class FixmlHandler extends DefaultHandler {
 		this.resource = resource;
 	}
 
-	
-	
 
 	/* (non-Javadoc)
 	 * @see org.xml.sax.helpers.DefaultHandler#startDocument()
@@ -146,6 +153,7 @@ public class FixmlHandler extends DefaultHandler {
 	@Override
 	public void startDocument () throws SAXException {
 		System.out.println("Parsing " + modelName);
+		ResourceSet rs = new ResourceSetImpl();
 		URI uri = URI.createFileURI(modelPath + "\\" + modelName + "Data.fixml"); 
 		resource = rs.createResource(uri);
 		
@@ -194,6 +202,7 @@ public class FixmlHandler extends DefaultHandler {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.success = true;
 		System.out.println("End document");
 	}
 
