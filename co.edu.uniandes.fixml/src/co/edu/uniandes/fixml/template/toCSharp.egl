@@ -1,6 +1,5 @@
 [%
   import 'toCSharpUtils.egl';
-  "Starting EGL".println();
 %]
 
 [% if( clazz.clazzes.size > 0 ) { %]using System.Collections.Generic;[% } %]

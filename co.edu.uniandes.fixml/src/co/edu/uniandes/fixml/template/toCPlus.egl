@@ -13,9 +13,6 @@ class [%= clazz.name %] {
 
 	for (subClazz in clazz.clazzes ) {
 	
-		subClazz.println(); 
-		subClazz.name.println();
-	
 		var cont: Integer = 1;
 		for (instance in subClazz.instances ) { %]
 	[%= subClazz.name%]* [%= subClazz.name%]_[%= cont%];[% 

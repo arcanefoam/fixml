@@ -61,7 +61,6 @@ public class TemplateRunnable extends Thread {
 	@Override
 	public void run() {
 		EglTemplateFactory eglTF = new EglTemplateFactory();
-		//eglTF.setRoot(getURI(modelPath + "/cSharp/"));
 		eglTF.getContext().getModelRepository().addModel(sourceModel);
 		EglTemplate temp = null;
 		try {

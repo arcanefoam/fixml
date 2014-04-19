@@ -5,26 +5,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.DecimalFormat;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.epsilon.common.util.StringProperties;
-import org.eclipse.epsilon.egl.EglFileGeneratingTemplate;
-import org.eclipse.epsilon.egl.EglPersistentTemplate;
-import org.eclipse.epsilon.egl.EglTemplate;
-import org.eclipse.epsilon.egl.EglTemplateFactory;
-import org.eclipse.epsilon.egl.util.FileUtil;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
-import org.eclipse.epsilon.eol.models.IModel;
-import org.eclipse.epsilon.standalone.EglStandaloneEngine;
 import org.eclipse.epsilon.standalone.EtlStanaloneEngine;
 import org.eclipse.epsilon.standalone.util.ExecutionException;
 import org.eclipse.epsilon.standalone.util.ParseException;
@@ -33,7 +25,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 import co.edu.uniandes.fixml.parser.FixmlHandler;
-import co.edu.uniandes.fixml.simpleObject.Clazz;
 import co.edu.uniandes.fixml.simpleObject.SimpleObjectPackage;
 import co.edu.uniandes.fixml.simplexml.SimplexmlPackage;
 
@@ -59,14 +50,15 @@ public class FixmlToObjectOriented {
 	 */
 	static public void main(String[] args) throws Exception {
 	    
-		// TODO Test that the filename is a file and modelPath is a folder
-		if (args.length > 1) {
-			filename = args[0];
-			modelPath = args[1];
-		}
+		long startTime = System.nanoTime();
 		
-		setupEmf();
-	    
+		// TODO Test that the filename is a file and modelPath is a folder
+		if (args.length > 0) {
+			filename = args[0];
+			if (args.length > 1) {
+				modelPath = args[1];
+			}
+		}
 	    if (filename == null) {
 	        usage();
 	    } else {
@@ -88,6 +80,7 @@ public class FixmlToObjectOriented {
 	    		usage();
 	    	}
 	    }
+	    setupEmf();
 	    boolean result = parseFixml();
 	    if (result) {
 	    	EmfModel emfFixmlModel = null;
@@ -129,19 +122,27 @@ public class FixmlToObjectOriented {
 					TemplateRunnable cSharpGen = new TemplateRunnable(baseDir + "CSharp/" , emfObjectModel, getResourceURI("template/toCSharp.egl"), ".sc");
 					TemplateRunnable cPlusGen = new TemplateRunnable(baseDir + "CPlus/" , emfObjectModel, getResourceURI("template/toCPlus.egl"), ".cpp");
 					TemplateRunnable javaGen = new TemplateRunnable(baseDir + "Java/" , emfObjectModel, getResourceURI("template/toJava.egl"), ".java");
+					System.out.println("Generating Code.");
 					cSharpGen.run();
 					cPlusGen.run();
 					javaGen.run();
+					int running;
+					do {
+						running = 0;
+					    if (cSharpGen.isAlive() || cPlusGen.isAlive() || javaGen.isAlive()) {
+					    	running++;
+					    }
+					} while (running > 0);
 				} else {
 					System.err.print(errorMessage);
 				}
 			}
-			
-			
 	    } else {
 	    	System.err.println(errorMessage);
 	    }
-    	
+	    long endTime = System.nanoTime();
+		//System.out.println("Execution Time: " + (endTime - startTime));
+		System.out.println("Execution Time : " + new DecimalFormat("#.##########").format((endTime - startTime)/1000000) + " Milliseconds");
 	}
 	
 	private static void setupEmf() {
