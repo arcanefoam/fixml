@@ -12,12 +12,11 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
+import org.eclipse.epsilon.standalone.EglStandaloneEngine;
 import org.eclipse.epsilon.standalone.EtlStanaloneEngine;
 import org.eclipse.epsilon.standalone.util.ExecutionException;
 import org.eclipse.epsilon.standalone.util.ParseException;
@@ -36,7 +35,7 @@ import co.edu.uniandes.fixml.simplexml.SimplexmlPackage;
  */
 public class FixmlToObjectOriented {
 	
-	private static String OBJECT_MODEL_NAME = "object";
+	private static String OBJECT_MODEL_NAME = "objectModel";
 	
 	private static String filename = null; 	// args[0]
 	private static String modelPath = null;	// args[1]
@@ -94,7 +93,7 @@ public class FixmlToObjectOriented {
 			}
 			EmfModel emfObjectModel = null;
 			try {
-				emfObjectModel = createObjectModel();
+				emfObjectModel = createObjectModel(false, true);
 			} catch (URISyntaxException uex) {
 				System.err.println("Error creating the Object model URI. " + uex.getMessage());
 				System.exit(1);
@@ -114,6 +113,11 @@ public class FixmlToObjectOriented {
 			} catch (ExecutionException eex) {
 				errorMessage = "Error executing the Fixml to Object tranformation. " + eex.getMessage();
 			}
+			emfObjectModel.dispose();
+			emfObjectModel = createObjectModel(true, false);
+			EglStandaloneEngine egxEngine = new EglStandaloneEngine(getResourceURI("to/cplus/toC++.egx"));
+			egxEngine.getModels().add(emfObjectModel);
+			egxEngine.execute();
 	    } else {
 	    	System.err.println(errorMessage);
 	    }
@@ -168,7 +172,7 @@ public class FixmlToObjectOriented {
     	
 	}
 	
-	private static EmfModel createObjectModel() 
+	private static EmfModel createObjectModel(boolean readOnLoad, boolean storeOnDispoal) 
 		          throws EolModelLoadingException, URISyntaxException {
 		
 		EmfModel emfModel = new EmfModel();
@@ -179,8 +183,8 @@ public class FixmlToObjectOriented {
 	            getResourceURI("/co/edu/uniandes/fixml/model/SimpleObject.ecore"));
 	    properties.put(EmfModel.PROPERTY_MODEL_URI, 
 	    		getURI(modelPath + "/" + modelName + "Object.xmi"));
-	    properties.put(EmfModel.PROPERTY_READONLOAD, Boolean.FALSE.toString());
-	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, Boolean.TRUE.toString());
+	    properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad);
+	    properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDispoal);
 	    emfModel.load(properties, null);
 	    return emfModel;
 	}

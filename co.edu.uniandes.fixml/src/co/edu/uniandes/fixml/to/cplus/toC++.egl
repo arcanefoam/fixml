@@ -1,0 +1,72 @@
+[% import 'toC++Utils.egl';%]#include <iostream> 
+[%for (subClazz in clazz.clazzes ) { %] #include "[%= subClazz.name%].cpp" 
+[% } %]
+
+using namespace std;
+
+class [%= clazz.name %] {
+
+	private:[%="\n"%][% 
+	for (attribute in clazz.attributes ) { %]
+  	string [%= attribute.name  %]_;
+	[% } %][%
+
+	for (subClazz in clazz.clazzes ) {
+	
+		subClazz.println(); 
+		subClazz.name.println();
+	
+		var cont: Integer = 1;
+		for (instance in subClazz.instances ) { %]
+	[%= subClazz.name%]* [%= subClazz.name%]_[%= cont%];[% 
+		cont = cont+1; 
+		}%][%="\n"%][%	
+	}%]
+ 	
+ 	public: 
+
+  	// default constructor
+	[%= clazz.name %] () {[%="\n"%][%
+	
+	for (att in clazz.attributes) { %]
+		[%= att.name%]_ = [%=valueFor2(clazz.instances.first, att)%];
+	[% }
+	
+	// if ( clazz.eContainer().isTypeOf( Model ) ) {  
+	if ( clazz == Clazz.all().first.clazzes.first ) {
+		for (subClazz in clazz.clazzes ) { 
+			subClazz.initialization2('');
+		} 
+	}else{
+		for (subClazz in clazz.clazzes ) {		
+			subClazz.initialization2WithOutParam('');
+		} 
+	} 
+	%]
+  	
+  	}
+  
+  	// by parameters
+  	[%= clazz.name %] ([%
+		var parameters : String = "";
+	  	parameters = clazz.attributes.collect(a|"string " + a.name + "_p").concat(", "); 
+      	for (subClazz in clazz.clazzes ) {
+			var cont: Integer = 1;
+			for (instance in subClazz.instances ) {
+				parameters = parameters + ", " + subClazz.name + "* " + subClazz.name + "_" + cont;
+				cont = cont+1;
+			}
+		}%]
+		[%=parameters%]){
+	  
+		[%= clazz.attributes.collect(a|a.name + "_ = " + a.name + "_p").concat(";\n\t\t")%];
+	  
+		[%for (subClazz in clazz.clazzes ){
+			var cont: Integer = 1;
+			for (instance in subClazz.instances ) { %]
+		this->[%= subClazz.name%]_[%= cont%] = [%= subClazz.name%]_[%= cont%];[%="\n"%] [% 
+			cont = cont+1;
+			}	
+		}%]
+  	}
+};
