@@ -10,16 +10,16 @@ import org.eclipse.epsilon.etl.execute.context.EtlContext;
 import org.eclipse.epsilon.etl.trace.TransformationTrace;
 import org.eclipse.epsilon.standalone.util.ExecutionException;
 
-public class EtlStanaloneEngine extends EpsilonStandaloneEngine {
+public class EtlStandaloneEngine extends EpsilonStandaloneEngine {
 
 	
-	public EtlStanaloneEngine(URI etlSourceURI) {
+	public EtlStandaloneEngine(URI etlSourceURI) {
 		super();
 		this.sourceURI = etlSourceURI;
 		models = new ArrayList<IModel>();
 	}
 
-	public EtlStanaloneEngine(String etlSourcePath) {
+	public EtlStandaloneEngine(String etlSourcePath) {
 		super();
 		this.sourceURI = URI.create(etlSourcePath);
 		models = new ArrayList<IModel>();

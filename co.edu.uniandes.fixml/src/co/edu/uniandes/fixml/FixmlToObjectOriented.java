@@ -1,6 +1,5 @@
 package co.edu.uniandes.fixml;
 
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
 import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
-import org.eclipse.epsilon.standalone.EtlStanaloneEngine;
+import org.eclipse.epsilon.standalone.EtlStandaloneEngine;
 import org.eclipse.epsilon.standalone.util.ExecutionException;
 import org.eclipse.epsilon.standalone.util.ParseException;
 import org.eclipse.epsilon.standalone.util.SourceLoadException;
@@ -29,7 +28,6 @@ import co.edu.uniandes.fixml.simpleObject.SimpleObjectPackage;
 import co.edu.uniandes.fixml.simplexml.SimplexmlPackage;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class FixmlToObjectOriented.
  */
@@ -49,24 +47,33 @@ public class FixmlToObjectOriented {
 	 * @throws Exception the exception
 	 */
 	static public void main(String[] args) throws Exception {
+
+		// variables to store time 
+	    long startTimeTask = 0L;
+	    long endTimeTask = 0L;
 	    
 		long startTime = System.nanoTime();
-		
-		// TODO Test that the filename is a file and modelPath is a folder
+			
+		// check existence of arguments
 		if (args.length > 0) {
 			filename = args[0];
 			if (args.length > 1) {
 				modelPath = args[1];
 			}
 		}
+		
+		// check existence of filename in the arguments
 	    if (filename == null) {
 	        usage();
 	    } else {
+	    	
+	    	// check existence of a file with the provided filename
 	    	File file = new File(filename);
 	    	if (file.isDirectory()) {
 	    		System.out.println("The provided <file.xml> is not a file.");
 	    		usage();
 	    	}
+	    	
 	    	if (file.exists()) {
 	    		modelName = file.getName();
 	    		if (modelName.indexOf(".") > 0) {
@@ -74,75 +81,94 @@ public class FixmlToObjectOriented {
 	    		}
 	    		if (modelPath == null) {
 	    			modelPath = file.getParentFile().getAbsolutePath();
-	    	    }
+	    	    }	    	
 	    	} else {
 	    		System.err.println("The FIXML (<file.xml>) must exist.");
 	    		usage();
 	    	}
 	    }
+	    
+	    // == setup EMF infrastructure
+	    
+	    startTimeTask = System.nanoTime();
 	    setupEmf();
+	    endTimeTask = System.nanoTime();
+	    showElapsedTime( "Setup EMF\t\t: ", startTimeTask, endTimeTask);
+	    
+	    // == XML to XML Model	    
+		startTimeTask = System.nanoTime();
 	    boolean result = parseFixml();
-	    if (result) {
-	    	EmfModel emfFixmlModel = null;
-			try {
-				emfFixmlModel = createFixMLModel();
-			} catch (URISyntaxException uex) {
-				System.err.println("Fatal Error creating the FIXML model URI. " + uex.getMessage());
-				System.exit(1);
-			} catch (EolModelLoadingException ex) {
-				System.err.println("Fatal Error loading the FIXML model. " + ex.getMessage());
-				System.exit(1);
-			}
-			EmfModel emfObjectModel = null;
-			try {
-				emfObjectModel = createObjectModel(false, true);
-			} catch (URISyntaxException uex) {
-				System.err.println("Fatal Error creating the Object model URI. " + uex.getMessage());
-				System.exit(1);
-			} catch (EolModelLoadingException eex) {
-				System.err.println("Fatal Error loading the Object model. " + eex.getMessage());
-				System.exit(1);
-			}
-			EtlStanaloneEngine etlEngine = new EtlStanaloneEngine(getResourceURI("to/object/FixmlToObject.etl"));
-	    	etlEngine.getModels().add(emfObjectModel);
-	    	etlEngine.getModels().add(emfFixmlModel);
-			try {
-				etlEngine.execute();
-			} catch (ParseException pex) {
-				errorMessage = "Error parsing the Fixml to Object transformation. " + pex.getMessage();
-			} catch (SourceLoadException sex) {
-				errorMessage = "Error loading the Source. " + sex.getMessage();
-			} catch (ExecutionException eex) {
-				errorMessage = "Error executing the Fixml to Object tranformation. " + eex.getMessage();
-			} finally {
-				if (etlEngine.getResult() != null) {
-					emfObjectModel.dispose();
-					emfObjectModel = createObjectModel(true, false);
-					String baseDir = modelPath + "/src-gen/" + modelName + "/";
-					TemplateRunnable cSharpGen = new TemplateRunnable(baseDir + "CSharp/" , emfObjectModel, getResourceURI("template/toCSharp.egl"), ".sc");
-					TemplateRunnable cPlusGen = new TemplateRunnable(baseDir + "CPlus/" , emfObjectModel, getResourceURI("template/toCPlus.egl"), ".cpp");
-					TemplateRunnable javaGen = new TemplateRunnable(baseDir + "Java/" , emfObjectModel, getResourceURI("template/toJava.egl"), ".java");
-					System.out.println("Generating Code.");
-					cSharpGen.run();
-					cPlusGen.run();
-					javaGen.run();
-					int running;
-					do {
-						running = 0;
-					    if (cSharpGen.isAlive() || cPlusGen.isAlive() || javaGen.isAlive()) {
-					    	running++;
-					    }
-					} while (running > 0);
-				} else {
-					System.err.print(errorMessage);
-				}
-			}
-	    } else {
+	    endTimeTask = System.nanoTime();
+	    showElapsedTime( "XML to XMLModel\t\t: ", startTimeTask, endTimeTask);
+	    if ( !result ) {
 	    	System.err.println(errorMessage);
+	    	System.exit(1);
 	    }
+	    
+	    
+	    // == XML to Object Model
+	    startTimeTask = System.nanoTime();
+	    	
+    	EmfModel emfFixmlModel = null;
+		try {
+			emfFixmlModel = createFixMLModel();		
+		} catch (URISyntaxException uex) {
+			showErrorMessage("Fatal Error creating the FIXML model URI. " + uex.getMessage());
+		} catch (EolModelLoadingException ex) {
+			showErrorMessage("Fatal Error loading the FIXML model. " + ex.getMessage());
+		}
+		
+		EmfModel emfObjectModel = null;
+		try {
+			emfObjectModel = createObjectModel(false, true);
+		} catch (URISyntaxException uex) {
+			showErrorMessage("Fatal Error creating the Object model URI. " + uex.getMessage());
+		} catch (EolModelLoadingException eex) {
+			showErrorMessage("Fatal Error loading the Object model. " + eex.getMessage());
+		}
+		
+		EtlStandaloneEngine etlEngine = new EtlStandaloneEngine(getResourceURI("to/object/FixmlToObject.etl"));
+    	etlEngine.getModels().add(emfObjectModel);
+    	etlEngine.getModels().add(emfFixmlModel);
+		try {
+			etlEngine.execute();
+		} catch (ParseException pex) {
+			showErrorMessage( "Error parsing the Fixml to Object transformation. " + pex.getMessage());
+		} catch (SourceLoadException sex) {
+			showErrorMessage( "Error loading the Source. " + sex.getMessage());
+		} catch (ExecutionException eex) {
+			showErrorMessage( "Error executing the Fixml to Object tranformation. " + eex.getMessage());
+		} 
+		
+		endTimeTask = System.nanoTime();
+		showElapsedTime( "XMLModel to ObjectModel\t: ", startTimeTask, endTimeTask); 
+				
+		
+		// == Model Object to Code
+		startTimeTask = System.nanoTime();
+		emfObjectModel.dispose();
+		emfObjectModel = createObjectModel(true, false);
+		String baseDir = modelPath + "/src-gen/" + modelName + "/";
+		TemplateRunnable cSharpGen = new TemplateRunnable(baseDir + "CSharp/" , emfObjectModel, getResourceURI("template/toCSharp.egl"), ".sc");
+		TemplateRunnable cPlusGen = new TemplateRunnable(baseDir + "CPlus/" , emfObjectModel, getResourceURI("template/toCPlus.egl"), ".cpp");
+		TemplateRunnable javaGen = new TemplateRunnable(baseDir + "Java/" , emfObjectModel, getResourceURI("template/toJava.egl"), ".java");
+		System.out.println("Generating Code.");
+		cSharpGen.run();
+		cPlusGen.run();
+		javaGen.run();
+		int running;
+		do {
+			running = 0;
+		    if (cSharpGen.isAlive() || cPlusGen.isAlive() || javaGen.isAlive()) {
+		    	running++;
+		    }
+		} while (running > 0);
+		endTimeTask = System.nanoTime();					
+		showElapsedTime( "ObjectModel to Code\t: ", startTimeTask, endTimeTask);
+					
 	    long endTime = System.nanoTime();
-		//System.out.println("Execution Time: " + (endTime - startTime));
-		System.out.println("Execution Time : " + new DecimalFormat("#.##########").format((endTime - startTime)/1000000) + " Milliseconds");
+
+	    showElapsedTime( "Total Execution Time\t: ", startTime, endTime);
 	}
 	
 	private static void setupEmf() {
@@ -210,6 +236,13 @@ public class FixmlToObjectOriented {
 	    return emfModel;
 	}
 
+	/**
+	 * Return a string representing the URI for a resource
+	 * 
+	 * @param resource resource to obtain an URI
+	 * @return the URI for the provided resource
+	 * @throws URISyntaxException
+	 */
 	private static String getResourceURI(String resource) throws URISyntaxException {
 		String uri = FixmlToObjectOriented.class.getResource(resource).toURI().toString();
 	    if (uri.toString().indexOf("bin") > -1) {
@@ -218,7 +251,13 @@ public class FixmlToObjectOriented {
 	    return uri;
 	}
 	
-	protected static java.net.URI getURI(String fileName)  {
+	/**
+	 * Return a java.net.URI for an specified filename  
+	 * 
+	 * @param fileName filename to obtain the URI
+	 * @return URI for the provided filename
+	 */
+	private static java.net.URI getURI(String fileName)  {
 	    return java.net.URI.create(URI.createFileURI(fileName).toString());
 	}
 		  
@@ -242,7 +281,7 @@ public class FixmlToObjectOriented {
     }
 
 	/**
-	 * Usage.
+	 * Display usage Information
 	 */
 	private static void usage() {
 		System.err.println("Usage: FixmlToObjectOriented <file.xml>");
@@ -250,4 +289,15 @@ public class FixmlToObjectOriented {
 	    System.exit(1);
 	}
 
+	private static void showElapsedTime( String message, long startTime, long endTime ) {
+		System.out.println( message 
+				+ new DecimalFormat("######.#####").format((endTime - startTime)/1000000) 
+				+ " Milliseconds");
+	}
+	
+	private static void showErrorMessage( String message ) {
+		System.err.println( message );
+	    System.exit(1);
+	}
+	
 }
