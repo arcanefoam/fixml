@@ -6,4 +6,4 @@ http://www.transformation-tool-contest.eu/
 The standalone application receives two parameters: the location of the FIXML input file and the path to the folder where the code should be generated. If the second argument is not given, the code is generated in the same folder as the FIXML file.
 
 After compiling the application run:
-FixmlToObjectOriented 
+FixmlToObjectOriented file.xml&lt; &lt;pathToOutputFolder (optional)&lt;
