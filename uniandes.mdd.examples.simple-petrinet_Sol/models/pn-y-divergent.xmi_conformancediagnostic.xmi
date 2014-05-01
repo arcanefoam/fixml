@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<ConformanceValidationMM:ConformanceDiagnostic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ConformanceValidationMM="http://co.edu.uniandes.metamodel.conformancevalidation">
-  <conformanceProblems xsi:type="ConformanceValidationMM:OCLConformanceProblem" constraint="self.elements->exists(t : Element | t.oclIsTypeOf(PetriNet::Transition).and(self.elements->select(i : Element | i.oclIsTypeOf(PetriNet::InputArc).and(i.oclAsType(PetriNet::InputArc).to.=(t)))->size().&lt;(self.elements->select(o : Element | o.oclIsTypeOf(PetriNet::OutputArc).and(o.oclAsType(PetriNet::OutputArc).from.=(t)))->size()))).not()">
-    <modelElementReference href="pn-y-divergent.xmi#/"/>
-  </conformanceProblems>
-</ConformanceValidationMM:ConformanceDiagnostic>

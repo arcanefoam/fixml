@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PetriNet:PetriNet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PetriNet="http://petrinet">
-  <elements xsi:type="PetriNet:Place" name="P1"/>
-  <elements xsi:type="PetriNet:Transition" name="T1"/>
-  <elements xsi:type="PetriNet:Place" name="P2"/>
-  <elements xsi:type="PetriNet:InputArc" name="FromP1toT1" from="//@elements.0" to="//@elements.1"/>
-  <elements xsi:type="PetriNet:OutputArc" name="FromT1toP2" from="//@elements.1" to="//@elements.2"/>
-</PetriNet:PetriNet>

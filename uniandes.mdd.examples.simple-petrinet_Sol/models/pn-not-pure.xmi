@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PN:PetriNet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PN="http://petrinet">
-  <elements xsi:type="PN:Transition" name="T1" maxDelay="1.0"/>
-  <elements xsi:type="PN:Place" name="P1"/>
-  <elements xsi:type="PN:OutputArc" name="FromT1toP2" from="//@elements.0" to="//@elements.1"/>
-  <elements xsi:type="PN:InputArc" name="FromP1toT1" from="//@elements.1" to="//@elements.0"/>
-</PN:PetriNet>

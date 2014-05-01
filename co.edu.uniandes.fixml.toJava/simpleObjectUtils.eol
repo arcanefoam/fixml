@@ -1,9 +1,0 @@
-
-operation valueFor( instance : Instance, attribute : Attribute ) : String {
-	for ( value in instance.values ) {
-		if ( value.attribute == attribute) {
-		   return value.text;
-		}
-	}
-	return "null";
-}

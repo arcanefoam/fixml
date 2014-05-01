@@ -1,8 +1,0 @@
-rule clazz2Java
-	transform clazz : Clazz {
-	
-	guard		: not (clazz == Clazz.all().first ) 
-	template	: "toJava.egl"
-	target		: "test/" + objectModel.getAliases().first + "/" + clazz.name + ".java" 
-	
-} 

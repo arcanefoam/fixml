@@ -1,8 +1,0 @@
-import '../metamodels/petrinet.ecore'
-
-package PN
-
-context Transition inv :
-	maxDelay > minDelay
-
-endpackage
